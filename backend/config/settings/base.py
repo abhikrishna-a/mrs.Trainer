@@ -99,6 +99,7 @@ REST_FRAMEWORK = {
         "code_daily": "200/day",
         "problem_answer": "60/min",
         "exam_answer": "60/min",
+        "activity": "30/min",
     },
     "EXCEPTION_HANDLER": "quizzes.exceptions.custom_exception_handler",
     "DEFAULT_RENDERER_CLASSES": [

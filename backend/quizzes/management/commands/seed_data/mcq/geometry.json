@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Area of Circle",
+    "text": "What is the area of a circle with radius 7 cm? (Use \u03c0 = 22/7)",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "154 cm\u00b2",
+        "is_correct": true
+      },
+      {
+        "text": "44 cm\u00b2",
+        "is_correct": false
+      },
+      {
+        "text": "308 cm\u00b2",
+        "is_correct": false
+      },
+      {
+        "text": "77 cm\u00b2",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Area = \u03c0r\u00b2 = (22/7) \u00d7 7\u00b2 = (22/7) \u00d7 49 = 22 \u00d7 7 = 154 cm\u00b2. Choosing 44 cm\u00b2 is the circumference (2\u03c0r), not area. Choosing 308 cm\u00b2 uses diameter instead of radius: \u03c0(14)\u00b2 = 616/2 = 308. Choosing 77 cm\u00b2 uses \u03c0r instead of \u03c0r\u00b2."
+  },
+  {
+    "title": "Triangle Angle Sum",
+    "text": "Two angles of a triangle are 45\u00b0 and 75\u00b0. What is the third angle?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "60\u00b0",
+        "is_correct": true
+      },
+      {
+        "text": "90\u00b0",
+        "is_correct": false
+      },
+      {
+        "text": "30\u00b0",
+        "is_correct": false
+      },
+      {
+        "text": "120\u00b0",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Sum of angles in a triangle = 180\u00b0. Third angle = 180 - 45 - 75 = 60\u00b0. Choosing 90\u00b0 adds the given angles (45+75=120) and subtracts from 180 incorrectly: 180-120=60 - wait that gives 60 too. Let me recalculate: 180 - 45 - 75 = 60. So 90 is wrong because it would make the sum 45+75+90=210, exceeding 180. Choosing 30\u00b0 incorrectly assumes the angles are complementary."
+  },
+  {
+    "title": "Pythagorean Triple",
+    "text": "Which of the following sets of side lengths forms a right-angled triangle?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "5 cm, 12 cm, 13 cm",
+        "is_correct": true
+      },
+      {
+        "text": "4 cm, 5 cm, 6 cm",
+        "is_correct": false
+      },
+      {
+        "text": "7 cm, 8 cm, 10 cm",
+        "is_correct": false
+      },
+      {
+        "text": "3 cm, 5 cm, 7 cm",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A right triangle satisfies Pythagoras: 5\u00b2 + 12\u00b2 = 25 + 144 = 169 = 13\u00b2. For 4,5,6: 16+25=41 \u2260 36. For 7,8,10: 49+64=113 \u2260 100. For 3,5,7: 9+25=34 \u2260 49."
+  },
+  {
+    "title": "Volume of Cylinder",
+    "text": "What is the volume of a cylinder with radius 3 cm and height 10 cm? (Use \u03c0 = 3.14)",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "282.6 cm\u00b3",
+        "is_correct": true
+      },
+      {
+        "text": "94.2 cm\u00b3",
+        "is_correct": false
+      },
+      {
+        "text": "188.4 cm\u00b3",
+        "is_correct": false
+      },
+      {
+        "text": "565.2 cm\u00b3",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Volume = \u03c0r\u00b2h = 3.14 \u00d7 9 \u00d7 10 = 282.6 cm\u00b3. Choosing 94.2 cm\u00b3 uses only \u03c0r\u00b2 (area of base, ignoring height). Choosing 188.4 cm\u00b3 uses the wrong radius value. Choosing 565.2 cm\u00b3 doubles the result or uses diameter instead of radius."
+  },
+  {
+    "title": "Parallel Lines",
+    "text": "If two parallel lines are cut by a transversal, which pair of angles are always equal?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Corresponding angles",
+        "is_correct": true
+      },
+      {
+        "text": "Adjacent angles",
+        "is_correct": false
+      },
+      {
+        "text": "Complementary angles",
+        "is_correct": false
+      },
+      {
+        "text": "Supplementary angles",
+        "is_correct": false
+      }
+    ],
+    "explanation": "When parallel lines are cut by a transversal, corresponding angles are equal. Adjacent angles are supplementary (sum to 180\u00b0), not necessarily equal. Complementary angles sum to 90\u00b0 and are not a standard pair in this context."
+  },
+  {
+    "title": "Area of Triangle",
+    "text": "A triangle has base 12 cm and height 8 cm. What is its area?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "48 cm\u00b2",
+        "is_correct": true
+      },
+      {
+        "text": "96 cm\u00b2",
+        "is_correct": false
+      },
+      {
+        "text": "24 cm\u00b2",
+        "is_correct": false
+      },
+      {
+        "text": "72 cm\u00b2",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Area = (1/2) \u00d7 base \u00d7 height = (1/2) \u00d7 12 \u00d7 8 = 48 cm\u00b2. Choosing 96 cm\u00b2 forgets to divide by 2. Choosing 24 cm\u00b2 multiplies base by height/4 or uses wrong dimensions."
+  },
+  {
+    "title": "Perimeter of Rectangle",
+    "text": "A rectangle has length 15 cm and width 10 cm. What is its perimeter?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "50 cm",
+        "is_correct": true
+      },
+      {
+        "text": "150 cm",
+        "is_correct": false
+      },
+      {
+        "text": "25 cm",
+        "is_correct": false
+      },
+      {
+        "text": "100 cm",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Perimeter = 2(l + w) = 2(15 + 10) = 2 \u00d7 25 = 50 cm. Choosing 150 cm is the area (15 \u00d7 10). Choosing 25 cm forgets to multiply by 2. Choosing 100 cm uses 4 times the sum instead of 2 times."
+  },
+  {
+    "title": "Angle in a Semicircle",
+    "text": "An angle inscribed in a semicircle is always:",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "A right angle",
+        "is_correct": true
+      },
+      {
+        "text": "An acute angle",
+        "is_correct": false
+      },
+      {
+        "text": "An obtuse angle",
+        "is_correct": false
+      },
+      {
+        "text": "A reflex angle",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The angle inscribed in a semicircle (Thales' theorem) is always a right angle (90\u00b0). This is a fundamental theorem in geometry."
+  },
+  {
+    "title": "Surface Area of Cube",
+    "text": "What is the total surface area of a cube with side 5 cm?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "150 cm\u00b2",
+        "is_correct": true
+      },
+      {
+        "text": "125 cm\u00b2",
+        "is_correct": false
+      },
+      {
+        "text": "100 cm\u00b2",
+        "is_correct": false
+      },
+      {
+        "text": "175 cm\u00b2",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Surface area = 6 \u00d7 side\u00b2 = 6 \u00d7 25 = 150 cm\u00b2. Choosing 125 cm\u00b2 is the volume (5\u00b3). Choosing 100 cm\u00b2 uses 4 sides instead of 6."
+  },
+  {
+    "title": "Similar Triangles",
+    "text": "Two similar triangles have areas in ratio 4 : 9. What is the ratio of their corresponding sides?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "2 : 3",
+        "is_correct": true
+      },
+      {
+        "text": "4 : 9",
+        "is_correct": false
+      },
+      {
+        "text": "16 : 81",
+        "is_correct": false
+      },
+      {
+        "text": "3 : 2",
+        "is_correct": false
+      }
+    ],
+    "explanation": "For similar triangles, areas are proportional to the square of corresponding sides. So side ratio = \u221a(area ratio) = \u221a(4/9) = 2/3 = 2 : 3. Choosing 4 : 9 uses the area ratio directly without taking the square root."
+  }
+]

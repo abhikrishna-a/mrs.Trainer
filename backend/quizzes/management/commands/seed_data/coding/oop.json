@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Class for Circle",
+    "text": "Complete the program to define a Circle class with a constructor (radius) and an area() method. Read radius and print the area (use π = 3.14159).\n\nInput format:\nA single float radius (0 < r ≤ 10⁴)\n\nOutput format:\nThe area as a float (round to 2 decimal places)\n\nExample:\nInput:\n5\n\nOutput:\n78.54",
+    "difficulty": "medium",
+    "starter_code": "class Circle:\n    def __init__(self, radius):\n        self.radius = radius\n    \n    def area(self):\n        # Compute and return the area\n        pass\n\ndef solve():\n    r = float(input())\n    c = Circle(r)\n    print(f'{c.area():.2f}')\n\nsolve()\n",
+    "test_cases": [
+      {
+        "stdin": "5",
+        "expected_output": "78.54",
+        "is_hidden": false
+      },
+      {
+        "stdin": "1",
+        "expected_output": "3.14",
+        "is_hidden": false
+      },
+      {
+        "stdin": "10",
+        "expected_output": "314.16",
+        "is_hidden": true
+      }
+    ]
+  }
+]

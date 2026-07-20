@@ -3,7 +3,9 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.db.models import Count, Q
+from django.db.models.functions import TruncDate
 from django.shortcuts import get_object_or_404
+from datetime import timedelta
 from django.utils import timezone
 from rest_framework import generics, status
 from rest_framework.decorators import api_view, permission_classes, throttle_classes
@@ -76,6 +78,9 @@ class ProblemAnswerThrottle(UserRateThrottle):
 
 class ExamAnswerThrottle(UserRateThrottle):
     scope = "exam_answer"
+
+class ActivityThrottle(UserRateThrottle):
+    scope = "activity"
 
 
 # ─── Auth ──────────────────────────────────────────────
@@ -494,6 +499,31 @@ def dashboard_view(request):
     _update_user_profile(request.user)
     profile.refresh_from_db()
     return Response(DashboardSerializer(profile).data)
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+@throttle_classes([ActivityThrottle])
+def activity_heatmap_view(request):
+    end = timezone.now().date()
+    start = end - timedelta(days=364)
+
+    raw_counts = dict(
+        UserAttempt.objects
+        .filter(user=request.user, created_at__date__gte=start)
+        .annotate(day=TruncDate("created_at"))
+        .values("day")
+        .annotate(count=Count("id"))
+        .values_list("day", "count")
+    )
+
+    activity = []
+    current = start
+    for _ in range(365):
+        activity.append({"date": current.isoformat(), "count": raw_counts.get(current, 0)})
+        current += timedelta(days=1)
+
+    return Response({"activity": activity})
 
 
 # ─── Health ────────────────────────────────────────────

@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Binary Tree Maximum Children",
+    "text": "What is the maximum number of children a node can have in a binary tree?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "2",
+        "is_correct": true
+      },
+      {
+        "text": "1",
+        "is_correct": false
+      },
+      {
+        "text": "3",
+        "is_correct": false
+      },
+      {
+        "text": "Unlimited",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A binary tree restricts each node to at most 2 children (left and right). 'Binary' means 2-way branching."
+  },
+  {
+    "title": "Tree Height",
+    "text": "What is the height of a tree with a single node (the root)?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "0",
+        "is_correct": true
+      },
+      {
+        "text": "1",
+        "is_correct": false
+      },
+      {
+        "text": "2",
+        "is_correct": false
+      },
+      {
+        "text": "Undefined",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The height of a tree with only a root node is 0 (counting edges) or 1 (counting nodes). Most commonly in CS, height = number of edges on longest path from root to leaf, which is 0 for a single node."
+  },
+  {
+    "title": "BST Property",
+    "text": "In a Binary Search Tree, where is the minimum value located?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Leftmost node",
+        "is_correct": true
+      },
+      {
+        "text": "Rightmost node",
+        "is_correct": false
+      },
+      {
+        "text": "Root node",
+        "is_correct": false
+      },
+      {
+        "text": "Any leaf node",
+        "is_correct": false
+      }
+    ],
+    "explanation": "In a BST, all left subtree values are less than the root. The minimum is at the leftmost (deepest left) node. The maximum is at the rightmost node."
+  },
+  {
+    "title": "Tree Traversal - Inorder",
+    "text": "Which tree traversal visits nodes in ascending order in a BST?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Inorder (left-root-right)",
+        "is_correct": true
+      },
+      {
+        "text": "Preorder (root-left-right)",
+        "is_correct": false
+      },
+      {
+        "text": "Postorder (left-right-root)",
+        "is_correct": false
+      },
+      {
+        "text": "Level order (BFS)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Inorder traversal of a BST visits left subtree (smaller), root, then right subtree (larger), resulting in sorted ascending order."
+  },
+  {
+    "title": "Complete Binary Tree",
+    "text": "A complete binary tree of height 3 (root at level 0) has at most how many nodes?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "15",
+        "is_correct": true
+      },
+      {
+        "text": "7",
+        "is_correct": false
+      },
+      {
+        "text": "14",
+        "is_correct": false
+      },
+      {
+        "text": "8",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Maximum nodes in a complete binary tree of height h is 2^(h+1) - 1. For height 3: 2^4 - 1 = 15. Choosing 7 is for height 2."
+  },
+  {
+    "title": "Heap Property",
+    "text": "In a max-heap, where is the largest element always located?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "At the root",
+        "is_correct": true
+      },
+      {
+        "text": "At a leaf",
+        "is_correct": false
+      },
+      {
+        "text": "In the right subtree",
+        "is_correct": false
+      },
+      {
+        "text": "At a random position",
+        "is_correct": false
+      }
+    ],
+    "explanation": "In a max-heap, the heap property ensures the parent is always greater than or equal to its children. Therefore, the largest element must be at the root."
+  },
+  {
+    "title": "AVL Tree Balance",
+    "text": "In an AVL tree, what is the maximum allowed difference in height between left and right subtrees of any node?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "1",
+        "is_correct": true
+      },
+      {
+        "text": "0",
+        "is_correct": false
+      },
+      {
+        "text": "2",
+        "is_correct": false
+      },
+      {
+        "text": "log N",
+        "is_correct": false
+      }
+    ],
+    "explanation": "AVL trees maintain a balance factor (height difference) of at most 1 for every node. A difference of 0 would be too restrictive (perfectly balanced, hard to maintain)."
+  },
+  {
+    "title": "DFS vs BFS",
+    "text": "Which tree traversal uses a queue data structure?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Level order (BFS)",
+        "is_correct": true
+      },
+      {
+        "text": "Preorder (DFS)",
+        "is_correct": false
+      },
+      {
+        "text": "Inorder (DFS)",
+        "is_correct": false
+      },
+      {
+        "text": "Postorder (DFS)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Level-order traversal (BFS) uses a queue — process a node, enqueue its children. DFS traversals (pre/in/post) use a stack (implicit call stack for recursion or explicit stack for iteration)."
+  },
+  {
+    "title": "Trie Use Case",
+    "text": "Which data structure is most efficient for autocomplete/search suggestions?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Trie (prefix tree)",
+        "is_correct": true
+      },
+      {
+        "text": "Binary Search Tree",
+        "is_correct": false
+      },
+      {
+        "text": "Hash table",
+        "is_correct": false
+      },
+      {
+        "text": "Array",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A trie provides O(L) prefix-based lookups (L = prefix length), making it ideal for autocomplete. Hash tables can't do prefix matching efficiently. BSTs would require O(L log N) string comparisons."
+  },
+  {
+    "title": "Diameter of Tree",
+    "text": "The diameter of a tree is defined as the:",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "Longest path between any two nodes",
+        "is_correct": true
+      },
+      {
+        "text": "Height of the root node",
+        "is_correct": false
+      },
+      {
+        "text": "Number of leaf nodes",
+        "is_correct": false
+      },
+      {
+        "text": "Number of edges from root to deepest leaf",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The diameter (or width) of a tree is the longest path between any two nodes, measured by the number of edges. This path may or may not pass through the root."
+  }
+]

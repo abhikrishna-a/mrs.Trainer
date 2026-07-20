@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Type Function",
+    "text": "What does type(3.14) return?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "&lt;class 'float'&gt;",
+        "is_correct": true
+      },
+      {
+        "text": "&lt;class 'int'&gt;",
+        "is_correct": false
+      },
+      {
+        "text": "&lt;class 'str'&gt;",
+        "is_correct": false
+      },
+      {
+        "text": "&lt;class 'double'&gt;",
+        "is_correct": false
+      }
+    ],
+    "explanation": "3.14 is a float literal in Python. There is no 'double' type in Python (unlike C/Java) — Python floats are double-precision under the hood but referred to as 'float'."
+  },
+  {
+    "title": "Set Operations",
+    "text": "What is {1, 2, 3} & {2, 3, 4}?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "{2, 3}",
+        "is_correct": true
+      },
+      {
+        "text": "{1, 2, 3, 4}",
+        "is_correct": false
+      },
+      {
+        "text": "{1, 4}",
+        "is_correct": false
+      },
+      {
+        "text": "{2, 3, 4}",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The & operator is set intersection, returning elements common to both sets. {1,2,3} ∩ {2,3,4} = {2,3}. The | operator gives union {1,2,3,4}. The - operator gives difference."
+  },
+  {
+    "title": "Dictionary Keys",
+    "text": "Which of the following CAN be used as a dictionary key?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Tuple (1, 2)",
+        "is_correct": true
+      },
+      {
+        "text": "List [1, 2]",
+        "is_correct": false
+      },
+      {
+        "text": "Set {1, 2}",
+        "is_correct": false
+      },
+      {
+        "text": "Dictionary {'a': 1}",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Dictionary keys must be hashable (immutable). Tuples are immutable and hashable. Lists, sets, and dicts are mutable and unhashable."
+  },
+  {
+    "title": "String Methods",
+    "text": "What does 'hello world'.split() return?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "['hello', 'world']",
+        "is_correct": true
+      },
+      {
+        "text": "['hello world']",
+        "is_correct": false
+      },
+      {
+        "text": "['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']",
+        "is_correct": false
+      },
+      {
+        "text": "('hello', 'world')",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The split() method (without arguments) splits on whitespace and returns a list of words. split(',') would split on commas."
+  },
+  {
+    "title": "Type Conversion",
+    "text": "What is the result of int('101', 2)?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "5",
+        "is_correct": true
+      },
+      {
+        "text": "101",
+        "is_correct": false
+      },
+      {
+        "text": "3",
+        "is_correct": false
+      },
+      {
+        "text": "Error",
+        "is_correct": false
+      }
+    ],
+    "explanation": "int('101', 2) converts the string '101' from base 2 to decimal: 1×2² + 0×2 + 1 = 4 + 0 + 1 = 5. Without the base argument, int('101') gives 101 (base 10)."
+  },
+  {
+    "title": "None Type",
+    "text": "What is the result of print(type(None))?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "&lt;class 'NoneType'&gt;",
+        "is_correct": true
+      },
+      {
+        "text": "&lt;class 'None'&gt;",
+        "is_correct": false
+      },
+      {
+        "text": "None",
+        "is_correct": false
+      },
+      {
+        "text": "&lt;class 'bool'&gt;",
+        "is_correct": false
+      }
+    ],
+    "explanation": "None is a singleton of type NoneType. It represents the absence of a value, similar to null in other languages."
+  },
+  {
+    "title": "List vs Tuple",
+    "text": "Which statement about tuples is TRUE?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Tuples are immutable sequences",
+        "is_correct": true
+      },
+      {
+        "text": "Tuples can contain only one data type",
+        "is_correct": false
+      },
+      {
+        "text": "Tuples are faster than lists for iteration",
+        "is_correct": false
+      },
+      {
+        "text": "Tuples don't support indexing",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Tuples are immutable sequences — once created, they cannot be modified. They can contain mixed types and support indexing. They may be slightly faster than lists but the main difference is immutability."
+  },
+  {
+    "title": "Deep vs Shallow Copy",
+    "text": "Which import is needed for deep copy in Python?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "import copy",
+        "is_correct": true
+      },
+      {
+        "text": "import deepcopy",
+        "is_correct": false
+      },
+      {
+        "text": "from sys import copy",
+        "is_correct": false
+      },
+      {
+        "text": "import clone",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The built-in 'copy' module provides copy.copy() (shallow) and copy.deepcopy() (deep). There is no 'deepcopy' or 'clone' module in Python's standard library."
+  },
+  {
+    "title": "Frozenset",
+    "text": "What is a frozenset in Python?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "An immutable version of a set",
+        "is_correct": true
+      },
+      {
+        "text": "A set of frozen objects",
+        "is_correct": false
+      },
+      {
+        "text": "A set stored on disk",
+        "is_correct": false
+      },
+      {
+        "text": "A set comprehension shortcut",
+        "is_correct": false
+      }
+    ],
+    "explanation": "frozenset() returns an immutable set. It can be used as a dictionary key or set element (unlike a regular set). frozenset({1,2,3}) creates an immutable set {1,2,3}."
+  },
+  {
+    "title": "Complex Numbers",
+    "text": "What is the type of 3+4j in Python?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "complex",
+        "is_correct": true
+      },
+      {
+        "text": "float",
+        "is_correct": false
+      },
+      {
+        "text": "int",
+        "is_correct": false
+      },
+      {
+        "text": "Error (j is not defined)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Python has built-in support for complex numbers using j as the imaginary unit. 3+4j is of type 'complex'. Note: j is the standard in engineering; Python uses j (not i)."
+  }
+]

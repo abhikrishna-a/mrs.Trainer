@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Hello World with Input",
+    "text": "Given a name as input, print 'Hello, {name}!'.\n\nInput format:\nA single line containing a name\n\nOutput format:\nHello, {name}!\n\nExample:\nInput:\nAlice\n\nOutput:\nHello, Alice!",
+    "difficulty": "easy",
+    "starter_code": "def solve():\n    name = input().strip()\n    # Print the greeting\n\nsolve()\n",
+    "test_cases": [
+      {
+        "stdin": "Alice",
+        "expected_output": "Hello, Alice!",
+        "is_hidden": false
+      },
+      {
+        "stdin": "Bob",
+        "expected_output": "Hello, Bob!",
+        "is_hidden": false
+      },
+      {
+        "stdin": "",
+        "expected_output": "Hello, !",
+        "is_hidden": true
+      }
+    ]
+  },
+  {
+    "title": "FizzBuzz",
+    "text": "Given N (1 ≤ N ≤ 100), print each number from 1 to N on a new line. But for multiples of 3 print 'Fizz', for multiples of 5 print 'Buzz', and for multiples of both 3 and 5 print 'FizzBuzz'.\n\nInput format:\nN\n\nOutput format:\nN lines, each with the number or the appropriate word\n\nExample:\nInput:\n5\n\nOutput:\n1\n2\nFizz\n4\nBuzz",
+    "difficulty": "easy",
+    "starter_code": "def solve():\n    n = int(input())\n    # Print FizzBuzz for 1 to n\n\nsolve()\n",
+    "test_cases": [
+      {
+        "stdin": "5",
+        "expected_output": "1\n2\nFizz\n4\nBuzz",
+        "is_hidden": false
+      },
+      {
+        "stdin": "1",
+        "expected_output": "1",
+        "is_hidden": false
+      },
+      {
+        "stdin": "15",
+        "expected_output": "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz",
+        "is_hidden": true
+      }
+    ]
+  }
+]

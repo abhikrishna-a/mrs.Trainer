@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Linear Seating",
+    "text": "Five friends A, B, C, D, E sit in a row. A is at one end. B is to the immediate left of C. D is between A and E. Who is in the middle?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "E",
+        "is_correct": true
+      },
+      {
+        "text": "C",
+        "is_correct": false
+      },
+      {
+        "text": "D",
+        "is_correct": false
+      },
+      {
+        "text": "B",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Let's solve: A at left end. D between A and E: A, D, E. B is immediate left of C: B, C. Combined: A, D, E, B, C. Middle position (3rd) is E. Common mistake is placing D in the middle."
+  },
+  {
+    "title": "Circular Seating",
+    "text": "Four persons P, Q, R, S sit around a circular table facing the center. P sits to the immediate left of Q. R sits opposite P. Who sits to the immediate right of Q?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "S",
+        "is_correct": true
+      },
+      {
+        "text": "R",
+        "is_correct": false
+      },
+      {
+        "text": "Q",
+        "is_correct": false
+      },
+      {
+        "text": "P",
+        "is_correct": false
+      }
+    ],
+    "explanation": "P is immediately left of Q. With 4 persons around a circle and R opposite P, the only arrangement is Q, P, S, R (clockwise). Working clockwise from Q: P is left, then S, then R. S is to Q's immediate right."
+  },
+  {
+    "title": "Ordering by Height",
+    "text": "U is taller than V. W is taller than X but shorter than V. Y is shorter than X. Who is the shortest?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Y",
+        "is_correct": true
+      },
+      {
+        "text": "X",
+        "is_correct": false
+      },
+      {
+        "text": "V",
+        "is_correct": false
+      },
+      {
+        "text": "W",
+        "is_correct": false
+      }
+    ],
+    "explanation": "U > V > W > X > Y. Y is the shortest. Y is shorter than X, and X is shorter than W, and W is shorter than V, so Y is the shortest overall."
+  },
+  {
+    "title": "Blood Relations Puzzle",
+    "text": "A is the father of B. C is the sister of A. D is the son of C. How is D related to B?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Cousin",
+        "is_correct": true
+      },
+      {
+        "text": "Brother",
+        "is_correct": false
+      },
+      {
+        "text": "Nephew",
+        "is_correct": false
+      },
+      {
+        "text": "Uncle",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A is B's father. C is A's sister (B's aunt). D is C's son. So D is B's first cousin. Choosing 'brother' confuses the cousin relationship with sibling."
+  },
+  {
+    "title": "Scheduling",
+    "text": "Three exams - Math, Physics, Chemistry - are scheduled on Monday, Tuesday, Wednesday. Math is not on Wednesday. Physics is on Tuesday. On which day is Chemistry?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Monday",
+        "is_correct": false
+      },
+      {
+        "text": "Wednesday",
+        "is_correct": true
+      },
+      {
+        "text": "Tuesday",
+        "is_correct": false
+      },
+      {
+        "text": "Cannot be determined",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Physics = Tuesday. Math ≠ Wednesday, so Math = Monday. Then Chemistry = Wednesday (only day left)."
+  },
+  {
+    "title": "Truth Teller / Liar",
+    "text": "In a room, two people say:\nX says: 'Y is a liar.'\nY says: 'X is a liar.'\nWhat can be concluded?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "Both are lying",
+        "is_correct": false
+      },
+      {
+        "text": "One is lying and one is telling the truth",
+        "is_correct": true
+      },
+      {
+        "text": "Both are telling the truth",
+        "is_correct": false
+      },
+      {
+        "text": "Cannot be determined",
+        "is_correct": false
+      }
+    ],
+    "explanation": "If X is truthful, then Y is a liar, so Y's statement 'X is a liar' is false (consistent). If X is lying, then Y is truthful, so Y's statement 'X is a liar' is true (consistent). Either way, one is truthful, one is lying."
+  },
+  {
+    "title": "Ranking Puzzle",
+    "text": "In a class of 40 students, Ravi is 8th from the top. What is his rank from the bottom?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "33rd",
+        "is_correct": true
+      },
+      {
+        "text": "32nd",
+        "is_correct": false
+      },
+      {
+        "text": "34th",
+        "is_correct": false
+      },
+      {
+        "text": "31st",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Rank from bottom = Total + 1 - Rank from top = 40 + 1 - 8 = 33. Choosing 32 forgets the +1 adjustment (40 - 8 = 32, rank from bottom should be 33)."
+  },
+  {
+    "title": "Age Puzzle",
+    "text": "Three years from now, Alex will be twice as old as Ben. Ben is currently 10 years old. How old is Alex now?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "17",
+        "is_correct": false
+      },
+      {
+        "text": "20",
+        "is_correct": false
+      },
+      {
+        "text": "23",
+        "is_correct": true
+      },
+      {
+        "text": "13",
+        "is_correct": false
+      }
+    ],
+    "explanation": "In 3 years, Ben will be 13. At that time, Alex = 2 × 13 = 26. So Alex is now 26 - 3 = 23. Choosing 17 arrives at Alex's age in 3 years without subtracting the 3 years back."
+  },
+  {
+    "title": "Complex Ordering",
+    "text": "Five books are on a shelf. The red book is above the blue book. The green book is below the yellow book but above the red book. The black book is at the bottom. Which book is second from the top?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "Green",
+        "is_correct": true
+      },
+      {
+        "text": "Yellow",
+        "is_correct": false
+      },
+      {
+        "text": "Red",
+        "is_correct": false
+      },
+      {
+        "text": "Blue",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Top to bottom: Yellow > Green > Red > Blue > Black. Second from top is Green. 'Green is below yellow but above red': Yellow > Green > Red. 'Red above blue': Red > Blue. 'Black at bottom': Black is last. So: Yellow, Green, Red, Blue, Black."
+  },
+  {
+    "title": "Day Puzzle",
+    "text": "If the day after tomorrow is Thursday, what day was yesterday?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Monday",
+        "is_correct": true
+      },
+      {
+        "text": "Sunday",
+        "is_correct": false
+      },
+      {
+        "text": "Tuesday",
+        "is_correct": false
+      },
+      {
+        "text": "Saturday",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Day after tomorrow = Thursday means 2 days from now is Thursday. So today = Tuesday, and yesterday = Monday. A common mistake is counting forward from today incorrectly."
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "title": "Solve Linear Equation",
+    "text": "If 3x + 7 = 22, what is the value of x?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "5",
+        "is_correct": true
+      },
+      {
+        "text": "3",
+        "is_correct": false
+      },
+      {
+        "text": "7",
+        "is_correct": false
+      },
+      {
+        "text": "4",
+        "is_correct": false
+      }
+    ],
+    "explanation": "3x + 7 = 22 implies 3x = 15, so x = 5. The common mistake is to add 7 instead of subtracting it (giving 3x = 29, x \u2248 9.7, not listed) or to divide 22 by 3 directly without subtracting first (giving x \u2248 7.3).  Choosing x=3 comes from 3x=9 (subtracting 13 instead of 7)."
+  },
+  {
+    "title": "Quadratic Roots Product",
+    "text": "For the quadratic equation x\u00b2 \u2013 7x + 12 = 0, what is the product of its roots?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "12",
+        "is_correct": true
+      },
+      {
+        "text": "7",
+        "is_correct": false
+      },
+      {
+        "text": "-7",
+        "is_correct": false
+      },
+      {
+        "text": "-12",
+        "is_correct": false
+      }
+    ],
+    "explanation": "For a quadratic ax\u00b2 + bx + c = 0, the product of roots is c/a. Here c = 12, a = 1, so product = 12. The sum of roots (mistakenly chosen as 7) is -b/a = 7. The sign errors (-7 and -12) come from forgetting the signs in the formula."
+  },
+  {
+    "title": "Age Problem",
+    "text": "A father is twice as old as his son. 10 years ago, the father was three times as old as the son. What is the son's current age?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "20",
+        "is_correct": true
+      },
+      {
+        "text": "30",
+        "is_correct": false
+      },
+      {
+        "text": "10",
+        "is_correct": false
+      },
+      {
+        "text": "25",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Let son's age = x, father's age = 2x. 10 years ago: 2x - 10 = 3(x - 10). Solving: 2x - 10 = 3x - 30, so x = 20. Choosing 30 assumes the father is currently 3 times older. Choosing 10 assumes current ages satisfy the 10-year-ago condition directly."
+  },
+  {
+    "title": "Simultaneous Equations",
+    "text": "Solve for x and y: 2x + y = 7 and x - y = 2. What is the value of x?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "3",
+        "is_correct": true
+      },
+      {
+        "text": "2",
+        "is_correct": false
+      },
+      {
+        "text": "4",
+        "is_correct": false
+      },
+      {
+        "text": "1",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Adding the two equations: (2x + y) + (x - y) = 7 + 2, so 3x = 9, x = 3. Then y = 7 - 2x = 1. Choosing x=2 or x=4 comes from solving one equation without considering the other."
+  },
+  {
+    "title": "Work Rate Problem",
+    "text": "A can complete a job in 6 days. B can complete the same job in 12 days. How many days will they take working together?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "4",
+        "is_correct": true
+      },
+      {
+        "text": "9",
+        "is_correct": false
+      },
+      {
+        "text": "18",
+        "is_correct": false
+      },
+      {
+        "text": "3",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A's rate = 1/6 job per day, B's rate = 1/12 job per day. Combined rate = 1/6 + 1/12 = 2/12 + 1/12 = 3/12 = 1/4. So they take 4 days. Choosing 9 averages the days (6+12)/2. Choosing 18 adds the days (6+12). Choosing 3 comes from 1/6 + 1/12 = 1/3 (incorrect addition of fractions)."
+  },
+  {
+    "title": "Quadratic Roots Sum",
+    "text": "For the equation 2x\u00b2 \u2013 8x + 6 = 0, what is the sum of the roots?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "4",
+        "is_correct": true
+      },
+      {
+        "text": "8",
+        "is_correct": false
+      },
+      {
+        "text": "3",
+        "is_correct": false
+      },
+      {
+        "text": "6",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Sum of roots = -b/a = -(-8)/2 = 8/2 = 4. Choosing 8 forgets to divide by a. Choosing 3 is the product of roots (c/a = 6/2 = 3). Choosing 6 comes from the constant term c."
+  },
+  {
+    "title": "Inequality Range",
+    "text": "Solve the inequality: 2x - 5 < 7. Which of the following is the solution set for x?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "x < 6",
+        "is_correct": true
+      },
+      {
+        "text": "x > 6",
+        "is_correct": false
+      },
+      {
+        "text": "x < 1",
+        "is_correct": false
+      },
+      {
+        "text": "x > 1",
+        "is_correct": false
+      }
+    ],
+    "explanation": "2x - 5 < 7 implies 2x < 12, so x < 6. The inequality sign flips only when multiplying/dividing by a negative number, which doesn't happen here. Choosing x < 1 comes from incorrectly subtracting 5 from both sides before dividing: 2x < 2."
+  },
+  {
+    "title": "Work with Three Workers",
+    "text": "P, Q, and R together can complete a task in 4 days. P alone can do it in 10 days, Q alone in 12 days. How many days would R alone take?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "15",
+        "is_correct": true
+      },
+      {
+        "text": "18",
+        "is_correct": false
+      },
+      {
+        "text": "12",
+        "is_correct": false
+      },
+      {
+        "text": "20",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Combined rate of P+Q+R = 1/4. P's rate = 1/10, Q's rate = 1/12. So R's rate = 1/4 - 1/10 - 1/12 = 15/60 - 6/60 - 5/60 = 4/60 = 1/15. So R takes 15 days. Choosing 18 or 20 comes from incorrect LCM calculations."
+  },
+  {
+    "title": "Speed and Distance",
+    "text": "A train 200 m long passes a pole in 10 seconds. What is the speed of the train in km/h?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "72",
+        "is_correct": true
+      },
+      {
+        "text": "20",
+        "is_correct": false
+      },
+      {
+        "text": "36",
+        "is_correct": false
+      },
+      {
+        "text": "60",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Speed = distance/time = 200m/10s = 20 m/s. Converting to km/h: 20 \u00d7 18/5 = 72 km/h. Choosing 20 keeps the m/s value without conversion. Choosing 36 uses 20 \u00d7 18/10 (wrong conversion factor)."
+  },
+  {
+    "title": "Factorisation",
+    "text": "Which of the following is a factor of x\u00b3 \u2013 8?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "x \u2013 2",
+        "is_correct": true
+      },
+      {
+        "text": "x + 2",
+        "is_correct": false
+      },
+      {
+        "text": "x\u00b2 + 4",
+        "is_correct": false
+      },
+      {
+        "text": "x\u00b2 \u2013 4",
+        "is_correct": false
+      }
+    ],
+    "explanation": "x\u00b3 - 8 = x\u00b3 - 2\u00b3 = (x - 2)(x\u00b2 + 2x + 4). The factor (x - 2) is correct by the difference of cubes formula a\u00b3 - b\u00b3 = (a - b)(a\u00b2 + ab + b\u00b2). Choosing (x + 2) confuses difference with sum of cubes. x\u00b2 + 4 is not a factor of the quadratic factor (which is x\u00b2 + 2x + 4)."
+  },
+  {
+    "title": "Mixture Problem",
+    "text": "How many litres of a 30% alcohol solution must be added to 10 litres of a 50% alcohol solution to get a 40% alcohol solution?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "10",
+        "is_correct": true
+      },
+      {
+        "text": "5",
+        "is_correct": false
+      },
+      {
+        "text": "15",
+        "is_correct": false
+      },
+      {
+        "text": "20",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Let x litres of 30% solution be added. Alcohol equation: 0.3x + 0.5(10) = 0.4(x + 10). Solving: 0.3x + 5 = 0.4x + 4, so 1 = 0.1x, x = 10. Choosing 5 assumes equal amounts. Choosing 15 or 20 comes from incorrect alligation or equation setup."
+  },
+  {
+    "title": "Quadratic Nature of Roots",
+    "text": "For which value of k does the equation x\u00b2 + kx + 9 = 0 have equal roots?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "6",
+        "is_correct": false
+      },
+      {
+        "text": "-6",
+        "is_correct": false
+      },
+      {
+        "text": "\u00b16",
+        "is_correct": true
+      },
+      {
+        "text": "3",
+        "is_correct": false
+      }
+    ],
+    "explanation": "For equal roots, discriminant D = b\u00b2 - 4ac = 0. Here a=1, b=k, c=9. So k\u00b2 - 36 = 0, k\u00b2 = 36, k = \u00b16. Choosing only +6 or only -6 gives half the correct answer. Choosing 3 gives no real connection to the discriminant condition."
+  },
+  {
+    "title": "Two-Digit Number",
+    "text": "The sum of digits of a two-digit number is 9. When the digits are reversed, the new number is 27 less than the original. What is the original number?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "63",
+        "is_correct": true
+      },
+      {
+        "text": "54",
+        "is_correct": false
+      },
+      {
+        "text": "72",
+        "is_correct": false
+      },
+      {
+        "text": "81",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Let number be 10a + b, with a + b = 9. Reversed: 10b + a. Given: (10a + b) - (10b + a) = 27, so 9a - 9b = 27, a - b = 3. Solving a + b = 9 and a - b = 3 gives a = 6, b = 3. Number = 63. 54 has digits summing to 9 but 54 - 45 = 9, not 27."
+  },
+  {
+    "title": "Infinite Series Sum",
+    "text": "What is the sum of the infinite geometric series: 1 + 1/2 + 1/4 + 1/8 + ...?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "2",
+        "is_correct": true
+      },
+      {
+        "text": "1.5",
+        "is_correct": false
+      },
+      {
+        "text": "1",
+        "is_correct": false
+      },
+      {
+        "text": "Infinite",
+        "is_correct": false
+      }
+    ],
+    "explanation": "For an infinite GP with first term a=1 and ratio r=1/2 (|r|<1), sum = a/(1-r) = 1/(1-1/2) = 2. Choosing 1.5 adds only the first three terms. Choosing 1 takes only the first term. The series converges (|r|<1), so it is not infinite."
+  },
+  {
+    "title": "Three Consecutive Integers",
+    "text": "Three consecutive integers have a sum of 72. What is the largest integer?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "24",
+        "is_correct": false
+      },
+      {
+        "text": "25",
+        "is_correct": true
+      },
+      {
+        "text": "23",
+        "is_correct": false
+      },
+      {
+        "text": "26",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Let the integers be x-1, x, x+1. Sum = 3x = 72, so x = 24. The largest is x+1 = 25. Choosing 24 is the middle number, not the largest. Choosing 23 is the smallest."
+  },
+  {
+    "title": "Compound Interest",
+    "text": "What is the compound interest on Rs. 5000 at 10% per annum for 2 years, compounded annually?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "1050",
+        "is_correct": true
+      },
+      {
+        "text": "1000",
+        "is_correct": false
+      },
+      {
+        "text": "1100",
+        "is_correct": false
+      },
+      {
+        "text": "1025",
+        "is_correct": false
+      }
+    ],
+    "explanation": "CI = P(1 + r/100)\u207f - P = 5000(1.1)\u00b2 - 5000 = 5000(1.21) - 5000 = 6050 - 5000 = 1050. Choosing 1000 is simple interest (10% of 5000 \u00d7 2). Choosing 1100 incorrectly compounds by adding 10% of the original each year to the interest."
+  },
+  {
+    "title": "Simultaneous with Three Variables",
+    "text": "Solve the system: x + y + z = 6, 2x - y + z = 3, x + 2y - z = 2. What is the value of x?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "1",
+        "is_correct": true
+      },
+      {
+        "text": "2",
+        "is_correct": false
+      },
+      {
+        "text": "3",
+        "is_correct": false
+      },
+      {
+        "text": "0",
+        "is_correct": false
+      }
+    ],
+    "explanation": "From equations (1) and (2): (x+y+z) + (2x-y+z) = 6+3 gives 3x + 2z = 9. From (1) and (3): (x+y+z) - (x+2y-z) = 6-2 gives -y + 2z = 4... Solving yields x=1, y=2, z=3. Choosing x=2 or x=3 comes from partial solving without eliminating variables correctly."
+  },
+  {
+    "title": "Percentage Change",
+    "text": "If the price of an item increases by 20% and then decreases by 20%, what is the net percentage change?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "4% decrease",
+        "is_correct": true
+      },
+      {
+        "text": "0% (no change)",
+        "is_correct": false
+      },
+      {
+        "text": "4% increase",
+        "is_correct": false
+      },
+      {
+        "text": "2% decrease",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Let initial price = 100. After 20% increase: 120. After 20% decrease on 120: 120 - 24 = 96. Net change = 4% decrease. The common mistake is to think +20% and -20% cancel out (0%). The percentage is applied to different bases."
+  },
+  {
+    "title": "Speed Ratio",
+    "text": "A cyclist travels 30 km at a speed of 10 km/h and returns at a speed of 15 km/h. What is the average speed for the entire journey?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "12 km/h",
+        "is_correct": true
+      },
+      {
+        "text": "12.5 km/h",
+        "is_correct": false
+      },
+      {
+        "text": "13 km/h",
+        "is_correct": false
+      },
+      {
+        "text": "10 km/h",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Average speed = total distance / total time = (30+30) / (30/10 + 30/15) = 60 / (3+2) = 12 km/h. Choosing 12.5 is the arithmetic mean of 10 and 15, which is wrong because equal distances (not equal times) are covered at each speed."
+  },
+  {
+    "title": "LCM Application",
+    "text": "Three bells ring at intervals of 4, 6, and 8 seconds respectively. If they ring together at 9:00 AM, at what time will they ring together again?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "9:00:24 AM",
+        "is_correct": false
+      },
+      {
+        "text": "9:00:48 AM",
+        "is_correct": false
+      },
+      {
+        "text": "9:01:12 AM",
+        "is_correct": true
+      },
+      {
+        "text": "9:00:12 AM",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The time after which they ring together again is LCM(4, 6, 8) = 24 seconds. So they ring together at 9:00:24 AM. Choosing 48 seconds is the product 4\u00d712 (wrong calculation). 12 seconds is LCM(4,6) without considering 8."
+  }
+]

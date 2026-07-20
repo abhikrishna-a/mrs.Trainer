@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Undirected Graph Edges",
+    "text": "What is the maximum number of edges in a simple undirected graph with N vertices?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "N(N-1)/2",
+        "is_correct": true
+      },
+      {
+        "text": "N²",
+        "is_correct": false
+      },
+      {
+        "text": "N-1",
+        "is_correct": false
+      },
+      {
+        "text": "N(N+1)/2",
+        "is_correct": false
+      }
+    ],
+    "explanation": "In a simple undirected graph, each pair of vertices has at most one edge. There are C(N,2) = N(N-1)/2 pairs. N² would be for a directed graph with self-loops."
+  },
+  {
+    "title": "Graph Representation",
+    "text": "Which representation is best for a dense graph?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Adjacency matrix",
+        "is_correct": true
+      },
+      {
+        "text": "Adjacency list",
+        "is_correct": false
+      },
+      {
+        "text": "Edge list",
+        "is_correct": false
+      },
+      {
+        "text": "Incidence matrix",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Adjacency matrix (N×N) uses O(N²) space regardless of edge count. For dense graphs (edges close to N²), this is efficient. Adjacency lists are better for sparse graphs (O(V+E) space)."
+  },
+  {
+    "title": "BFS Traversal",
+    "text": "Which graph traversal finds the shortest path in an unweighted graph?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "BFS (Breadth-First Search)",
+        "is_correct": true
+      },
+      {
+        "text": "DFS (Depth-First Search)",
+        "is_correct": false
+      },
+      {
+        "text": "Dijkstra's algorithm",
+        "is_correct": false
+      },
+      {
+        "text": "Prim's algorithm",
+        "is_correct": false
+      }
+    ],
+    "explanation": "BFS explores vertices in order of distance from the source, so the first time it reaches a target is along the shortest path (in unweighted graphs). DFS doesn't guarantee shortest paths."
+  },
+  {
+    "title": "Directed Acyclic Graph",
+    "text": "What is a topological ordering of a DAG?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "A linear ordering where all edges go forward",
+        "is_correct": true
+      },
+      {
+        "text": "A Hamiltonian path",
+        "is_correct": false
+      },
+      {
+        "text": "A depth-first traversal order",
+        "is_correct": false
+      },
+      {
+        "text": "A random permutation of vertices",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A topological ordering arranges vertices so that for every directed edge u→v, u comes before v. This is only possible in DAGs. DFS can produce a topological ordering using finish times."
+  },
+  {
+    "title": "Dijkstra's Limitation",
+    "text": "Why can't Dijkstra's algorithm handle negative edge weights?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "It assumes visited nodes have their final shortest distance",
+        "is_correct": true
+      },
+      {
+        "text": "It can't compute negative distances",
+        "is_correct": false
+      },
+      {
+        "text": "It requires edge weights to be positive integers",
+        "is_correct": false
+      },
+      {
+        "text": "It uses a min-heap for priority",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Dijkstra's algorithm greedily finalizes the shortest distance to visited nodes. A negative edge could later reduce a finalized distance, which Dijkstra's doesn't allow. Bellman-Ford handles negative weights."
+  },
+  {
+    "title": "Tree as Graph",
+    "text": "A tree with N nodes has exactly how many edges?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "N - 1",
+        "is_correct": true
+      },
+      {
+        "text": "N",
+        "is_correct": false
+      },
+      {
+        "text": "N + 1",
+        "is_correct": false
+      },
+      {
+        "text": "N / 2",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A tree is a connected acyclic graph with exactly N-1 edges. This is a fundamental property: a tree on N nodes always has N-1 edges."
+  },
+  {
+    "title": "Graph Coloring - Bipartite",
+    "text": "Which graph is always bipartite?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "A graph with no odd-length cycles",
+        "is_correct": true
+      },
+      {
+        "text": "A complete graph",
+        "is_correct": false
+      },
+      {
+        "text": "A directed acyclic graph",
+        "is_correct": false
+      },
+      {
+        "text": "A graph with a Hamiltonian cycle",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A graph is bipartite iff it has no odd-length cycles. If a graph has any odd cycle, 2-coloring is impossible."
+  },
+  {
+    "title": "Spanning Tree",
+    "text": "What is the minimum number of edges that must be removed from a connected graph with N nodes and E edges to make it a tree?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "E - N + 1",
+        "is_correct": true
+      },
+      {
+        "text": "E - N",
+        "is_correct": false
+      },
+      {
+        "text": "E - N - 1",
+        "is_correct": false
+      },
+      {
+        "text": "N - 1 - E",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A tree needs exactly N-1 edges. If the graph has E edges, we need to remove E - (N-1) = E - N + 1 edges to get a spanning tree. This is the number of cycles (cyclomatic number)."
+  },
+  {
+    "title": "Graph Traversal Time Complexity",
+    "text": "What is the time complexity of BFS on a graph with V vertices and E edges (adjacency list)?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "O(V + E)",
+        "is_correct": true
+      },
+      {
+        "text": "O(V²)",
+        "is_correct": false
+      },
+      {
+        "text": "O(V)",
+        "is_correct": false
+      },
+      {
+        "text": "O(E)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "BFS visits each vertex once and examines each edge once, giving O(V + E) time. O(V²) is for adjacency matrix BFS (checking all V neighbors for each vertex)."
+  },
+  {
+    "title": "Detecting Cycles in Directed Graph",
+    "text": "Which algorithm can detect cycles in a directed graph?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "DFS with a recursion stack",
+        "is_correct": true
+      },
+      {
+        "text": "BFS with a visited set",
+        "is_correct": false
+      },
+      {
+        "text": "Topological sort of an unmodified graph",
+        "is_correct": false
+      },
+      {
+        "text": "Union-Find (DSU)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "DFS with a recursion stack detects back edges in directed graphs. A back edge from a node to an ancestor in the DFS tree indicates a cycle. Union-Find works for undirected graphs, not directed."
+  }
+]

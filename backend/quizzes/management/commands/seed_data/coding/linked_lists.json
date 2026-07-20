@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Reverse a Linked List",
+    "text": "Given a linked list (N nodes, 1 ≤ N ≤ 10⁵), reverse it and print the reversed list. The list is given as space-separated integers, with -1 as the end marker. Print the reversed list space-separated.\n\nInput format:\na₁ a₂ ... aₙ -1\n\nOutput format:\naₙ aₙ₋₁ ... a₁\n\nExample:\nInput:\n1 2 3 4 5 -1\n\nOutput:\n5 4 3 2 1",
+    "difficulty": "easy",
+    "starter_code": "def solve():\n    arr = []\n    while True:\n        val = int(input())\n        if val == -1:\n            break\n        arr.append(val)\n    # Reverse and print\n\nsolve()\n",
+    "test_cases": [
+      {
+        "stdin": "1 2 3 4 5 -1",
+        "expected_output": "5 4 3 2 1",
+        "is_hidden": false
+      },
+      {
+        "stdin": "7 -1",
+        "expected_output": "7",
+        "is_hidden": false
+      },
+      {
+        "stdin": "10 20 30 -1",
+        "expected_output": "30 20 10",
+        "is_hidden": true
+      }
+    ]
+  },
+  {
+    "title": "Detect Cycle in Linked List",
+    "text": "Given N space-separated integers followed by a position P (-1 if no cycle), determine if the linked list has a cycle. The position P indicates where the tail connects (0-indexed). Print 'yes' or 'no'.\n\nInput format:\na₁ a₂ ... aₙ\nP\n\nOutput format:\nyes or no\n\nExample:\nInput:\n1 2 3 4 5\n2\n\nOutput:\nyes\n(Explanation: tail connects to node at index 2, creating a cycle 5→3)",
+    "difficulty": "medium",
+    "starter_code": "def solve():\n    arr = list(map(int, input().split()))\n    p = int(input())\n    # Detect cycle and print 'yes' or 'no'\n\nsolve()\n",
+    "test_cases": [
+      {
+        "stdin": "1 2 3 4 5\n-1",
+        "expected_output": "no",
+        "is_hidden": false
+      },
+      {
+        "stdin": "1 2 3 4 5\n0",
+        "expected_output": "yes",
+        "is_hidden": false
+      },
+      {
+        "stdin": "7\n-1",
+        "expected_output": "no",
+        "is_hidden": true
+      }
+    ]
+  }
+]

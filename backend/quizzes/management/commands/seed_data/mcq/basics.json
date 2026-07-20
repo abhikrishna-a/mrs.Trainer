@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Print Function",
+    "text": "What is the output of print('Hello' + ' ' + 'World')?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Hello World",
+        "is_correct": true
+      },
+      {
+        "text": "HelloWorld",
+        "is_correct": false
+      },
+      {
+        "text": "Hello World (with quotes)",
+        "is_correct": false
+      },
+      {
+        "text": "Error",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The + operator concatenates strings. 'Hello' + ' ' + 'World' = 'Hello World'. The print function outputs the resulting string without quotes."
+  },
+  {
+    "title": "Variable Assignment",
+    "text": "What is the type of x after x = 7 / 2 in Python 3?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "float",
+        "is_correct": true
+      },
+      {
+        "text": "int",
+        "is_correct": false
+      },
+      {
+        "text": "str",
+        "is_correct": false
+      },
+      {
+        "text": "bool",
+        "is_correct": false
+      }
+    ],
+    "explanation": "In Python 3, the / operator always returns a float (3.5). The // operator performs integer division (returns 3). This differs from Python 2 where / did integer division on ints."
+  },
+  {
+    "title": "String Indexing",
+    "text": "What is the result of 'Python'[-3]?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "'h'",
+        "is_correct": true
+      },
+      {
+        "text": "'t'",
+        "is_correct": false
+      },
+      {
+        "text": "'o'",
+        "is_correct": false
+      },
+      {
+        "text": "'n'",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Negative indices count from the end. 'Python'[-1]='n', [-2]='o', [-3]='h'. A common mistake is to start counting from 0 backwards."
+  },
+  {
+    "title": "List Comprehension",
+    "text": "What is the result of [x*2 for x in range(4)]?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "[0, 2, 4, 6]",
+        "is_correct": true
+      },
+      {
+        "text": "[2, 4, 6, 8]",
+        "is_correct": false
+      },
+      {
+        "text": "[0, 2, 4, 6, 8]",
+        "is_correct": false
+      },
+      {
+        "text": "[2, 4, 6]",
+        "is_correct": false
+      }
+    ],
+    "explanation": "range(4) generates 0,1,2,3. Each element is doubled: 0,2,4,6. The result is [0,2,4,6]. range(1,5) would give [2,4,6,8]."
+  },
+  {
+    "title": "Mutable vs Immutable",
+    "text": "Which of the following Python types is MUTABLE?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "list",
+        "is_correct": true
+      },
+      {
+        "text": "tuple",
+        "is_correct": false
+      },
+      {
+        "text": "str",
+        "is_correct": false
+      },
+      {
+        "text": "int",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Lists are mutable (can be modified in-place). Tuples, strings, and integers are immutable — any 'change' creates a new object."
+  },
+  {
+    "title": "Boolean Logic",
+    "text": "What does (True and False) or (not False) evaluate to?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "True",
+        "is_correct": true
+      },
+      {
+        "text": "False",
+        "is_correct": false
+      },
+      {
+        "text": "None",
+        "is_correct": false
+      },
+      {
+        "text": "Error",
+        "is_correct": false
+      }
+    ],
+    "explanation": "(True and False) = False. (not False) = True. False or True = True. Order of operations: 'and' has higher precedence than 'or' in Python."
+  },
+  {
+    "title": "For Loop with Range",
+    "text": "How many times will this loop execute: for i in range(2, 10, 3):",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "3",
+        "is_correct": true
+      },
+      {
+        "text": "2",
+        "is_correct": false
+      },
+      {
+        "text": "4",
+        "is_correct": false
+      },
+      {
+        "text": "8",
+        "is_correct": false
+      }
+    ],
+    "explanation": "range(2,10,3) generates: 2, 5, 8 (stops before 10). That's 3 iterations. The step size determines how the sequence advances."
+  },
+  {
+    "title": "Exception Handling",
+    "text": "Which clause in a try-except block always executes regardless of whether an exception occurred?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "finally",
+        "is_correct": true
+      },
+      {
+        "text": "except",
+        "is_correct": false
+      },
+      {
+        "text": "else",
+        "is_correct": false
+      },
+      {
+        "text": "try",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The 'finally' block always executes (for cleanup), whether an exception occurs or not. 'else' runs only if no exception occurs. 'except' runs only if an exception occurs."
+  },
+  {
+    "title": "Function Default Arguments",
+    "text": "What is the result of: def f(x=[]): x.append(1); return x; print(f()); print(f())?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "[1] then [1, 1]",
+        "is_correct": true
+      },
+      {
+        "text": "[1] then [1]",
+        "is_correct": false
+      },
+      {
+        "text": "Error",
+        "is_correct": false
+      },
+      {
+        "text": "[1] then []",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Default arguments are evaluated once at function definition, not each call. The same list is mutated across calls. First call: [1]. Second call: [1, 1]. This is a common Python pitfall."
+  },
+  {
+    "title": "Slicing",
+    "text": "What is the result of 'Python Programming'[7:18]?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "'Programming'",
+        "is_correct": true
+      },
+      {
+        "text": "'Programmin'",
+        "is_correct": false
+      },
+      {
+        "text": "'Python'",
+        "is_correct": false
+      },
+      {
+        "text": "'rogramming'",
+        "is_correct": false
+      }
+    ],
+    "explanation": "'Python Programming' has indices: P=0, y=1, t=2, h=3, o=4, n=5, ' '=6, P=7, r=8... [7:18] extracts from index 7 to 17: 'Programming' (length 11). 'Programmin' would be [7:17]."
+  }
+]

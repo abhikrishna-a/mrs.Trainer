@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Optimal Substructure",
+    "text": "What property must a problem have for dynamic programming to be applicable?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Optimal substructure + overlapping subproblems",
+        "is_correct": true
+      },
+      {
+        "text": "Only optimal substructure",
+        "is_correct": false
+      },
+      {
+        "text": "Only overlapping subproblems",
+        "is_correct": false
+      },
+      {
+        "text": "Greedy choice property",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Dynamic programming requires both optimal substructure (optimal solution contains optimal solutions to subproblems) and overlapping subproblems (same subproblems recur). Greedy choice property is for greedy algorithms."
+  },
+  {
+    "title": "Memoization vs Tabulation",
+    "text": "What is the key difference between memoization (top-down) and tabulation (bottom-up) DP?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Tabulation iteratively fills a table; memoization uses recursion with caching",
+        "is_correct": true
+      },
+      {
+        "text": "Memoization is always faster than tabulation",
+        "is_correct": false
+      },
+      {
+        "text": "Tabulation uses more memory than memoization",
+        "is_correct": false
+      },
+      {
+        "text": "Memoization can't handle recursive problems",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Memoization is top-down (recursive with cache), filling the table on demand. Tabulation is bottom-up (iterative), filling the entire table. Tabulation often has lower overhead but always computes all subproblems."
+  },
+  {
+    "title": "Fibonacci with DP",
+    "text": "Without optimization, what is the time complexity of computing the nth Fibonacci number recursively?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "O(2ⁿ)",
+        "is_correct": true
+      },
+      {
+        "text": "O(n)",
+        "is_correct": false
+      },
+      {
+        "text": "O(n²)",
+        "is_correct": false
+      },
+      {
+        "text": "O(log n)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The naive recursive Fibonacci makes 2 recursive calls per node, creating a binary tree of depth n, giving O(2ⁿ) time. With DP (memoization or tabulation), it becomes O(n)."
+  },
+  {
+    "title": "0/1 Knapsack - Items",
+    "text": "In the 0/1 knapsack problem, what constraint applies to each item?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Each item can be taken at most once",
+        "is_correct": true
+      },
+      {
+        "text": "Each item can be taken any number of times",
+        "is_correct": false
+      },
+      {
+        "text": "Items must be taken in order of value",
+        "is_correct": false
+      },
+      {
+        "text": "Fractional items are allowed",
+        "is_correct": false
+      }
+    ],
+    "explanation": "'0/1' means each item is either taken (1) or not taken (0) — at most once. Unlimited items is the 'unbounded knapsack' variant. Fractions are the 'fractional knapsack' (greedy solution)."
+  },
+  {
+    "title": "Coin Change - Optimal Substructure",
+    "text": "The minimum number of coins to make amount A using coins {câ‚, câ‚‚, ..., câ‚™} can be expressed as:",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "1 + min over i of minCoins(A - cáµ¢)",
+        "is_correct": true
+      },
+      {
+        "text": "min over i of 1 + minCoins(A/cáµ¢)",
+        "is_correct": false
+      },
+      {
+        "text": "sum over i of minCoins(A)/cáµ¢",
+        "is_correct": false
+      },
+      {
+        "text": "A / max(cáµ¢)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "minCoins(A) = 1 + min(minCoins(A-câ‚), minCoins(A-câ‚‚), ..., minCoins(A-câ‚™)). This is the optimal substructure: for each coin, make the remaining amount optimally."
+  },
+  {
+    "title": "LCS Problem",
+    "text": "The longest common subsequence (LCS) of 'ABC' and 'ACB' is:",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "'AB'",
+        "is_correct": true
+      },
+      {
+        "text": "'AC'",
+        "is_correct": false
+      },
+      {
+        "text": "'ABC'",
+        "is_correct": false
+      },
+      {
+        "text": "'A'",
+        "is_correct": false
+      }
+    ],
+    "explanation": "LCS of 'ABC' and 'ACB': The common subsequences are 'A' (length 1), 'B' (position 2 in both? No, B is at index 2 in 'ABC' and index 3 in 'ACB'), 'C' (index 3 and 2), 'AB' (indices 1,2 in first and 1,3 in second). So LCS = 'AB' or 'AC', both length 2. 'ABC' is not a subsequence of 'ACB' (the order of C and B differs)."
+  },
+  {
+    "title": "Edit Distance",
+    "text": "What operations does the edit distance (Levenshtein distance) typically allow?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Insert, delete, substitute",
+        "is_correct": true
+      },
+      {
+        "text": "Insert and delete only",
+        "is_correct": false
+      },
+      {
+        "text": "Swap adjacent characters",
+        "is_correct": false
+      },
+      {
+        "text": "Insert, delete, and transpose",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Levenshtein distance allows 3 operations: insert a character, delete a character, or substitute one character for another. Each operation typically costs 1."
+  },
+  {
+    "title": "Matrix Chain Multiplication",
+    "text": "Matrix chain multiplication is an example of:",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "DP on intervals",
+        "is_correct": true
+      },
+      {
+        "text": "Greedy on weights",
+        "is_correct": false
+      },
+      {
+        "text": "Divide and conquer without overlapping",
+        "is_correct": false
+      },
+      {
+        "text": "Linear DP on prefix",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Matrix chain multiplication uses DP on intervals (range-based DP), where dp[i][j] is the optimal cost for matrices i through j. The subproblem ranges overlap, requiring optimal substructure across intervals."
+  },
+  {
+    "title": "Palindromic Subsequence",
+    "text": "The longest palindromic subsequence (LPS) of 'BBABCBCAB' is:",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "BABCBAB",
+        "is_correct": true
+      },
+      {
+        "text": "BBBBB",
+        "is_correct": false
+      },
+      {
+        "text": "ABCBA",
+        "is_correct": false
+      },
+      {
+        "text": "BBCBB",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The longest palindromic subsequence of 'BBABCBCAB' is 'BABCBAB' (length 7). One way to find LPS is to compute LCS of the string with its reverse."
+  },
+  {
+    "title": "DP vs Divide & Conquer",
+    "text": "How does dynamic programming differ from divide and conquer?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "DP solves overlapping subproblems; D&C solves independent subproblems",
+        "is_correct": true
+      },
+      {
+        "text": "D&C uses recursion; DP never uses recursion",
+        "is_correct": false
+      },
+      {
+        "text": "DP is always faster than D&C",
+        "is_correct": false
+      },
+      {
+        "text": "D&C requires memoization; DP doesn't",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Both use recursion, but D&C splits problems into independent subproblems (e.g., merge sort), while DP handles overlapping subproblems (same subproblems recur). Memoization/tabulation optimizes DP, not D&C."
+  }
+]

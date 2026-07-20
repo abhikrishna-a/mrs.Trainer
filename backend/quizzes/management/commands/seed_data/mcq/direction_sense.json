@@ -1,0 +1,194 @@
+[
+  {
+    "title": "Two Turns",
+    "text": "Rohan starts walking north. He turns right, then right again. In which direction is he now facing?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "South",
+        "is_correct": true
+      },
+      {
+        "text": "North",
+        "is_correct": false
+      },
+      {
+        "text": "East",
+        "is_correct": false
+      },
+      {
+        "text": "West",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Starting North → turn right (East) → turn right (South). Two right turns from North is South. The common mistake is confusing the direction after each turn."
+  },
+  {
+    "title": "Distance Calculation",
+    "text": "A man walks 5 km east, then 3 km south, then 5 km west. How far is he from his starting point?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "3 km",
+        "is_correct": true
+      },
+      {
+        "text": "5 km",
+        "is_correct": false
+      },
+      {
+        "text": "13 km",
+        "is_correct": false
+      },
+      {
+        "text": "8 km",
+        "is_correct": false
+      }
+    ],
+    "explanation": "East 5 km then west 5 km cancels (net 0 east-west). He ends up 3 km south of the start. Distance = 3 km. Choosing 13 km adds all distances without considering cancellation."
+  },
+  {
+    "title": "Shadow Direction (Morning)",
+    "text": "If a man is standing facing east in the morning, where does his shadow fall?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Behind him (west)",
+        "is_correct": true
+      },
+      {
+        "text": "In front of him (east)",
+        "is_correct": false
+      },
+      {
+        "text": "To his left (north)",
+        "is_correct": false
+      },
+      {
+        "text": "To his right (south)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The sun rises in the east in the morning. If facing east, the sun is in front, so the shadow falls behind (west). The common mistake is thinking the sun is behind you when facing east."
+  },
+  {
+    "title": "Complex Path",
+    "text": "A starts from a point, walks 2 km north, turns right and walks 3 km, then turns right and walks 2 km. How far and in which direction is A from the start?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "3 km east",
+        "is_correct": true
+      },
+      {
+        "text": "2 km west",
+        "is_correct": false
+      },
+      {
+        "text": "3 km west",
+        "is_correct": false
+      },
+      {
+        "text": "5 km east",
+        "is_correct": false
+      }
+    ],
+    "explanation": "North 2 km → right (East) 3 km → right (South) 2 km. The north and south movements cancel (2 km each). He is left 3 km east of the start. Choosing 5 km adds all distances. Choosing 3 km west reverses the direction."
+  },
+  {
+    "title": "Right Turn Confusion",
+    "text": "Maya is facing southeast. She turns 135° clockwise. Which direction is she facing now?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "West",
+        "is_correct": true
+      },
+      {
+        "text": "East",
+        "is_correct": false
+      },
+      {
+        "text": "North",
+        "is_correct": false
+      },
+      {
+        "text": "South",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Clockwise from SE: SE → S (45°) → SW (90°) → W (135°). A 135° clockwise turn from southeast faces west. The opposite mistake (anticlockwise) would give east."
+  },
+  {
+    "title": "Relative Direction",
+    "text": "A is to the east of B. C is to the north of A. D is to the west of C. In which direction is D from B?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "North-west",
+        "is_correct": false
+      },
+      {
+        "text": "North-east",
+        "is_correct": true
+      },
+      {
+        "text": "South-west",
+        "is_correct": false
+      },
+      {
+        "text": "Cannot be determined",
+        "is_correct": false
+      }
+    ],
+    "explanation": "B at origin. A is east of B. C is north of A (so C is northeast of B). D is west of C (so D is north/north-east of B). D is to the northeast of B."
+  },
+  {
+    "title": "Three Right Turns",
+    "text": "If a person is facing north and makes three consecutive right turns, which direction is he facing?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "West",
+        "is_correct": true
+      },
+      {
+        "text": "East",
+        "is_correct": false
+      },
+      {
+        "text": "North",
+        "is_correct": false
+      },
+      {
+        "text": "South",
+        "is_correct": false
+      }
+    ],
+    "explanation": "North → right (East) → right (South) → right (West). Three right turns is equivalent to one left turn from North, which faces West."
+  },
+  {
+    "title": "Meeting Point",
+    "text": "P walks 5 m north, then 6 m east. Q walks 5 m south, then 4 m west. If both start from the same point, what is the distance between them?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "10√2 m",
+        "is_correct": true
+      },
+      {
+        "text": "2√61 m",
+        "is_correct": false
+      },
+      {
+        "text": "10√6 m",
+        "is_correct": false
+      },
+      {
+        "text": "20 m",
+        "is_correct": false
+      }
+    ],
+    "explanation": "P ends at (6, 5) from origin (east, north). Q ends at (-4, -5). Difference = (10, 10). Distance = √(10² + 10²) = √200 = 10√2 m. Choosing 20 m naively adds the individual distances."
+  }
+]

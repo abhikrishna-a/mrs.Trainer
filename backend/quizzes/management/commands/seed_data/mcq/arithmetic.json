@@ -1,0 +1,458 @@
+[
+  {
+    "title": "Percentage Calculation",
+    "text": "What is 15% of 240?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "36",
+        "is_correct": true
+      },
+      {
+        "text": "24",
+        "is_correct": false
+      },
+      {
+        "text": "30",
+        "is_correct": false
+      },
+      {
+        "text": "48",
+        "is_correct": false
+      }
+    ],
+    "explanation": "15% of 240 = (15/100) \u00d7 240 = 0.15 \u00d7 240 = 36. Choosing 24 is 10% of 240 (only the 10% part). Choosing 30 is 12.5% (half of 25%). Choosing 48 is 20% of 240."
+  },
+  {
+    "title": "Profit Percentage",
+    "text": "An item costing Rs. 500 is sold for Rs. 625. What is the profit percentage?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "25%",
+        "is_correct": true
+      },
+      {
+        "text": "20%",
+        "is_correct": false
+      },
+      {
+        "text": "30%",
+        "is_correct": false
+      },
+      {
+        "text": "15%",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Profit = SP - CP = 625 - 500 = 125. Profit % = (Profit/CP) \u00d7 100 = (125/500) \u00d7 100 = 25%. Choosing 20% calculates profit as a percentage of SP instead of CP: 125/625 = 20%."
+  },
+  {
+    "title": "Simple Interest",
+    "text": "What is the simple interest on Rs. 3000 at 8% per annum for 3 years?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "720",
+        "is_correct": true
+      },
+      {
+        "text": "600",
+        "is_correct": false
+      },
+      {
+        "text": "7200",
+        "is_correct": false
+      },
+      {
+        "text": "240",
+        "is_correct": false
+      }
+    ],
+    "explanation": "SI = P \u00d7 R \u00d7 T / 100 = 3000 \u00d7 8 \u00d7 3 / 100 = 720. Choosing 600 forgets to multiply by time (only 1 year). Choosing 7200 hasn't divided by 100. Choosing 240 calculates interest for 1 year at 8%."
+  },
+  {
+    "title": "Ratio and Proportion",
+    "text": "If A : B = 2 : 3 and B : C = 4 : 5, what is A : C?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "8 : 15",
+        "is_correct": true
+      },
+      {
+        "text": "2 : 5",
+        "is_correct": false
+      },
+      {
+        "text": "4 : 5",
+        "is_correct": false
+      },
+      {
+        "text": "6 : 8",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A : C = (A/B) \u00d7 (B/C) = (2/3) \u00d7 (4/5) = 8/15 = 8 : 15. Choosing 2 : 5 directly multiplies A and C values without considering B. Choosing 4 : 5 is just the second ratio."
+  },
+  {
+    "title": "Discount Problem",
+    "text": "A shirt marked at Rs. 800 is sold at a 15% discount. What is the selling price?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "680",
+        "is_correct": true
+      },
+      {
+        "text": "720",
+        "is_correct": false
+      },
+      {
+        "text": "760",
+        "is_correct": false
+      },
+      {
+        "text": "800",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Discount = 15% of 800 = 120. SP = 800 - 120 = 680. Choosing 720 is a 10% discount (80 off). Choosing 760 is a 5% discount (40 off)."
+  },
+  {
+    "title": "Average Calculation",
+    "text": "The average of 5 numbers is 24. If one number is removed, the average becomes 22. What is the removed number?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "32",
+        "is_correct": true
+      },
+      {
+        "text": "28",
+        "is_correct": false
+      },
+      {
+        "text": "30",
+        "is_correct": false
+      },
+      {
+        "text": "26",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Sum of 5 numbers = 5 \u00d7 24 = 120. Sum of remaining 4 = 4 \u00d7 22 = 88. Removed number = 120 - 88 = 32. Choosing 28 comes from incorrectly computing 24 + 4 (the difference in averages)."
+  },
+  {
+    "title": "Time and Work",
+    "text": "If 8 workers can build a wall in 12 days, how many days will 6 workers take to build the same wall? (Assume all workers work at the same rate)",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "16",
+        "is_correct": true
+      },
+      {
+        "text": "9",
+        "is_correct": false
+      },
+      {
+        "text": "14",
+        "is_correct": false
+      },
+      {
+        "text": "18",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Total work = 8 \u00d7 12 = 96 worker-days. With 6 workers: days = 96/6 = 16. Choosing 9 incorrectly assumes inverse proportion with ratio 6/8 (8 \u00d7 6/8 = 9). This is the wrong way to apply the ratio."
+  },
+  {
+    "title": "Compound Interest Comparison",
+    "text": "The difference between compound interest and simple interest on a sum for 2 years at 10% per annum is Rs. 50. What is the sum?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "5000",
+        "is_correct": true
+      },
+      {
+        "text": "4500",
+        "is_correct": false
+      },
+      {
+        "text": "5500",
+        "is_correct": false
+      },
+      {
+        "text": "4000",
+        "is_correct": false
+      }
+    ],
+    "explanation": "CI - SI for 2 years = P(r/100)\u00b2. Here, 50 = P(10/100)\u00b2 = P(0.01), so P = 5000. Choosing 4500 comes from a miscalculation of the difference formula."
+  },
+  {
+    "title": "Alligation",
+    "text": "In what ratio must water be mixed with milk costing Rs. 30 per litre to get a mixture worth Rs. 24 per litre?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "1 : 4",
+        "is_correct": true
+      },
+      {
+        "text": "1 : 5",
+        "is_correct": false
+      },
+      {
+        "text": "4 : 1",
+        "is_correct": false
+      },
+      {
+        "text": "5 : 1",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Using alligation: Cost of water = 0, milk = 30, mixture = 24. Ratio = (30-24) : (24-0) = 6 : 24 = 1 : 4 (water : milk). Choosing 1 : 5 or 4 : 1 inverts the ratio or misapplies the alligation rule."
+  },
+  {
+    "title": "Successive Discounts",
+    "text": "Two successive discounts of 10% and 20% are offered on an item. What is the equivalent single discount?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "28%",
+        "is_correct": true
+      },
+      {
+        "text": "30%",
+        "is_correct": false
+      },
+      {
+        "text": "25%",
+        "is_correct": false
+      },
+      {
+        "text": "15%",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Let MP = 100. After 10% discount: 90. After 20% discount on 90: 90 - 18 = 72. Total discount = 28%. The common mistake is to add them: 10% + 20% = 30%. The discounts are applied on different bases."
+  },
+  {
+    "title": "Partnership",
+    "text": "A and B invest in a business in the ratio 3 : 5. If the total profit is Rs. 16,000, what is A's share?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "6000",
+        "is_correct": true
+      },
+      {
+        "text": "8000",
+        "is_correct": false
+      },
+      {
+        "text": "10000",
+        "is_correct": false
+      },
+      {
+        "text": "5000",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A's share = (3/(3+5)) \u00d7 16000 = 3/8 \u00d7 16000 = 6000. Choosing 8000 assumes equal sharing. Choosing 10000 is B's share (5/8)."
+  },
+  {
+    "title": "Clock Angle",
+    "text": "What is the angle between the hour and minute hands at 3:30?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "75\u00b0",
+        "is_correct": true
+      },
+      {
+        "text": "90\u00b0",
+        "is_correct": false
+      },
+      {
+        "text": "105\u00b0",
+        "is_correct": false
+      },
+      {
+        "text": "60\u00b0",
+        "is_correct": false
+      }
+    ],
+    "explanation": "At 3:30, the minute hand is at 6 (180\u00b0 from 12). The hour hand is halfway between 3 and 4 (at 3.5 hours \u00d7 30\u00b0 = 105\u00b0 from 12). Angle difference = 180\u00b0 - 105\u00b0 = 75\u00b0. Choosing 90\u00b0 mistakenly assumes the hour hand stays at 3."
+  },
+  {
+    "title": "Calendar Day",
+    "text": "If 1st January of a non-leap year is a Monday, what day is 1st March of the same year?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "Monday",
+        "is_correct": true
+      },
+      {
+        "text": "Tuesday",
+        "is_correct": false
+      },
+      {
+        "text": "Wednesday",
+        "is_correct": false
+      },
+      {
+        "text": "Sunday",
+        "is_correct": false
+      }
+    ],
+    "explanation": "January has 31 days (3 odd days). So 1st February = Monday + 3 = Thursday. February (non-leap) has 28 days (0 odd days). So 1st March = Thursday + 0 = Thursday."
+  },
+  {
+    "title": "Pipe and Cistern",
+    "text": "Pipe A can fill a tank in 6 hours. Pipe B can empty it in 8 hours. If both are opened together, how long will it take to fill the tank?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "24 hours",
+        "is_correct": true
+      },
+      {
+        "text": "14 hours",
+        "is_correct": false
+      },
+      {
+        "text": "7 hours",
+        "is_correct": false
+      },
+      {
+        "text": "48 hours",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A's rate = 1/6 tank per hour (filling). B's rate = -1/8 tank per hour (emptying). Combined rate = 1/6 - 1/8 = 4/24 - 3/24 = 1/24. Time = 24 hours. Choosing 14 hours adds the times (6+8). Choosing 7 averages them."
+  },
+  {
+    "title": "Mean of Grouped Data",
+    "text": "The mean of 10 numbers is 15. If each number is multiplied by 2, what is the new mean?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "30",
+        "is_correct": true
+      },
+      {
+        "text": "15",
+        "is_correct": false
+      },
+      {
+        "text": "17",
+        "is_correct": false
+      },
+      {
+        "text": "20",
+        "is_correct": false
+      }
+    ],
+    "explanation": "If each observation is multiplied by a constant k, the mean is also multiplied by k. Here k = 2, so new mean = 2 \u00d7 15 = 30. Choosing 15 assumes the mean doesn't change. Choosing 17 adds 2 instead of multiplying."
+  },
+  {
+    "title": "Loss Percentage",
+    "text": "An item costing Rs. 400 is sold for Rs. 340. What is the loss percentage?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "15%",
+        "is_correct": true
+      },
+      {
+        "text": "10%",
+        "is_correct": false
+      },
+      {
+        "text": "12%",
+        "is_correct": false
+      },
+      {
+        "text": "18%",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Loss = CP - SP = 400 - 340 = 60. Loss % = (60/400) \u00d7 100 = 15%. Choosing 10% calculates (60/600) \u00d7 100, using a wrong cost base."
+  },
+  {
+    "title": "Speed and Time",
+    "text": "Walking at 4/5 of his usual speed, a man is 15 minutes late. What is his usual time?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "60 minutes",
+        "is_correct": true
+      },
+      {
+        "text": "45 minutes",
+        "is_correct": false
+      },
+      {
+        "text": "75 minutes",
+        "is_correct": false
+      },
+      {
+        "text": "50 minutes",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Let usual time = T minutes. At 4/5 speed, time = (5/4)T. Difference = (5/4)T - T = T/4 = 15 minutes, so T = 60 minutes. Choosing 45 or 75 comes from wrong fraction manipulation."
+  },
+  {
+    "title": "Mixture Replacement",
+    "text": "From a 20-litre mixture of milk and water in ratio 3 : 1, 4 litres are removed and replaced with water. What is the new ratio of milk to water?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "3 : 2",
+        "is_correct": true
+      },
+      {
+        "text": "1 : 1",
+        "is_correct": false
+      },
+      {
+        "text": "2 : 1",
+        "is_correct": false
+      },
+      {
+        "text": "4 : 3",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Initial: milk = 15L, water = 5L. Remove 4L mixture: milk removed = 4 \u00d7 3/4 = 3L, water removed = 1L. Remaining: milk = 12L, water = 4L. Add 4L water: milk = 12L, water = 8L. Ratio = 12:8 = 3:2. Choosing 1:1 incorrectly assumes equal removal from each component."
+  },
+  {
+    "title": "Train Crossing Platform",
+    "text": "A 150 m long train crosses a 250 m long platform in 20 seconds. What is the speed of the train?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "72 km/h",
+        "is_correct": true
+      },
+      {
+        "text": "45 km/h",
+        "is_correct": false
+      },
+      {
+        "text": "60 km/h",
+        "is_correct": false
+      },
+      {
+        "text": "90 km/h",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Total distance = train length + platform length = 150 + 250 = 400 m. Time = 20 s. Speed = 400/20 = 20 m/s = 20 \u00d7 18/5 = 72 km/h. Choosing 45 km/h uses only the train's length. Choosing 60 km/h uses only the platform's length."
+  }
+]

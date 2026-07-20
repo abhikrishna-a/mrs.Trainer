@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Class Definition",
+    "text": "Which keyword is used to define a class in Python?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "class",
+        "is_correct": true
+      },
+      {
+        "text": "struct",
+        "is_correct": false
+      },
+      {
+        "text": "def",
+        "is_correct": false
+      },
+      {
+        "text": "object",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Python uses the 'class' keyword to define classes. 'def' is for functions. 'struct' is not a Python keyword. 'object' is a built-in base class."
+  },
+  {
+    "title": "Self Parameter",
+    "text": "In Python instance methods, what does the 'self' parameter represent?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "The instance of the class",
+        "is_correct": true
+      },
+      {
+        "text": "The class itself",
+        "is_correct": false
+      },
+      {
+        "text": "A reference to the module",
+        "is_correct": false
+      },
+      {
+        "text": "Nothing (it's optional)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "'self' refers to the current instance of the class. It is passed implicitly by Python when calling instance methods. Unlike 'this' in Java/C++, self must be explicitly listed as the first parameter."
+  },
+  {
+    "title": "Inheritance",
+    "text": "What is the correct syntax for class B to inherit from class A?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "class B(A):",
+        "is_correct": true
+      },
+      {
+        "text": "class B extends A:",
+        "is_correct": false
+      },
+      {
+        "text": "class B inherits A:",
+        "is_correct": false
+      },
+      {
+        "text": "class B(A):",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Python uses parentheses for inheritance: class Child(Parent). Multiple inheritance: class Child(Parent1, Parent2)."
+  },
+  {
+    "title": "Dunder Methods",
+    "text": "Which method is called when len(obj) is executed?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "__len__",
+        "is_correct": true
+      },
+      {
+        "text": "__length__",
+        "is_correct": false
+      },
+      {
+        "text": "__size__",
+        "is_correct": false
+      },
+      {
+        "text": "__str__",
+        "is_correct": false
+      }
+    ],
+    "explanation": "len(obj) internally calls obj.__len__(). This is the Pythonic way to define the length of custom objects."
+  },
+  {
+    "title": "@staticmethod vs @classmethod",
+    "text": "What is the key difference between @staticmethod and @classmethod?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "@classmethod receives cls; @staticmethod receives nothing",
+        "is_correct": true
+      },
+      {
+        "text": "@staticmethod can access instance attributes",
+        "is_correct": false
+      },
+      {
+        "text": "There is no difference",
+        "is_correct": false
+      },
+      {
+        "text": "@classmethod is used only for abstract classes",
+        "is_correct": false
+      }
+    ],
+    "explanation": "@classmethod receives the class as the first parameter (cls) and can access/modify class state. @staticmethod receives no special first parameter and behaves like a regular function."
+  },
+  {
+    "title": "Encapsulation",
+    "text": "How do you indicate a 'private' attribute in Python?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Prefix with double underscore (__attr)",
+        "is_correct": true
+      },
+      {
+        "text": "Use the private keyword",
+        "is_correct": false
+      },
+      {
+        "text": "Prefix with single underscore (_attr)",
+        "is_correct": false
+      },
+      {
+        "text": "Use the @private decorator",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Double underscore prefix triggers name mangling (_ClassName__attr), making it harder to access from outside. Single underscore is a convention for 'protected', not enforced by Python."
+  },
+  {
+    "title": "Property Decorator",
+    "text": "What does @property do in a Python class?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Makes a method accessible as an attribute",
+        "is_correct": true
+      },
+      {
+        "text": "Creates a class variable",
+        "is_correct": false
+      },
+      {
+        "text": "Marks a method as abstract",
+        "is_correct": false
+      },
+      {
+        "text": "Defines a class-level property",
+        "is_correct": false
+      }
+    ],
+    "explanation": "@property allows a method to be accessed like an attribute (without parentheses). It enables getter/setter patterns with controlled access."
+  },
+  {
+    "title": "Abstract Base Class",
+    "text": "Which module provides abstract base class support in Python?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "abc",
+        "is_correct": true
+      },
+      {
+        "text": "abstract",
+        "is_correct": false
+      },
+      {
+        "text": "base",
+        "is_correct": false
+      },
+      {
+        "text": "interface",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The 'abc' module (Abstract Base Classes) provides ABC and abstractmethod decorator. A class inheriting from ABC with abstract methods cannot be instantiated."
+  },
+  {
+    "title": "Multiple Inheritance - MRO",
+    "text": "What determines the method resolution order (MRO) in Python?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "C3 linearization (depth-first, left-to-right)",
+        "is_correct": true
+      },
+      {
+        "text": "Depth-first, right-to-left",
+        "is_correct": false
+      },
+      {
+        "text": "Breadth-first search",
+        "is_correct": false
+      },
+      {
+        "text": "Alphabetical order",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Python uses C3 linearization for MRO: child first, then parents in order of definition, but ensuring a consistent ordering (linearization). You can check MRO with ClassName.__mro__."
+  },
+  {
+    "title": "Slots",
+    "text": "What does __slots__ do in a Python class?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "Restricts attribute creation to listed names",
+        "is_correct": true
+      },
+      {
+        "text": "Defines class attributes",
+        "is_correct": false
+      },
+      {
+        "text": "Reserves memory for the class",
+        "is_correct": false
+      },
+      {
+        "text": "Creates static methods for the class",
+        "is_correct": false
+      }
+    ],
+    "explanation": "__slots__ restricts a class to only the listed attribute names and prevents the creation of __dict__. This saves memory when many instances are created but prevents dynamic attribute assignment."
+  }
+]

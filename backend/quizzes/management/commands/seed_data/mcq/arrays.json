@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Array Index Access",
+    "text": "In a 0-indexed array arr = [10, 20, 30, 40, 50], what is the value of arr[2]?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "30",
+        "is_correct": true
+      },
+      {
+        "text": "20",
+        "is_correct": false
+      },
+      {
+        "text": "40",
+        "is_correct": false
+      },
+      {
+        "text": "50",
+        "is_correct": false
+      }
+    ],
+    "explanation": "In 0-indexed arrays, arr[0]=10, arr[1]=20, arr[2]=30. The common 1-indexing mistake is to choose 20 (thinking index 2 means the second element)."
+  },
+  {
+    "title": "Time Complexity - Linear Search",
+    "text": "What is the worst-case time complexity of linear search in an array of N elements?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "O(N)",
+        "is_correct": true
+      },
+      {
+        "text": "O(1)",
+        "is_correct": false
+      },
+      {
+        "text": "O(log N)",
+        "is_correct": false
+      },
+      {
+        "text": "O(N²)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "In the worst case, linear search examines all N elements (if the target is at the end or not present). So time complexity is O(N). O(log N) is binary search (requires sorted array)."
+  },
+  {
+    "title": "Array Reversal",
+    "text": "After reversing the array [1, 2, 3, 4, 5], what is the element at index 2?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "3",
+        "is_correct": true
+      },
+      {
+        "text": "2",
+        "is_correct": false
+      },
+      {
+        "text": "4",
+        "is_correct": false
+      },
+      {
+        "text": "5",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Reversed array: [5, 4, 3, 2, 1]. Index 2 (0-indexed) = 3. Choosing 5 is arr[0] of reversed array. Choosing 2 is arr[3] of reversed."
+  },
+  {
+    "title": "Insertion Complexity",
+    "text": "What is the time complexity of inserting an element at the beginning of an array (not a linked list)?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "O(1)",
+        "is_correct": false
+      },
+      {
+        "text": "O(N)",
+        "is_correct": true
+      },
+      {
+        "text": "O(log N)",
+        "is_correct": false
+      },
+      {
+        "text": "O(N²)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Inserting at the beginning requires shifting all existing elements right by one position, which takes O(N) time. This is a key difference between arrays and linked lists (where head insertion is O(1))."
+  },
+  {
+    "title": "Binary Search Precondition",
+    "text": "Which precondition is necessary for binary search on an array?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "The array must be sorted",
+        "is_correct": true
+      },
+      {
+        "text": "The array must not contain duplicates",
+        "is_correct": false
+      },
+      {
+        "text": "The array must contain positive numbers only",
+        "is_correct": false
+      },
+      {
+        "text": "The array must have an even number of elements",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Binary search requires the array to be sorted to work correctly. Without sorted order, the midpoint comparison cannot eliminate half the search space."
+  },
+  {
+    "title": "Subarray vs Subsequence",
+    "text": "In array [1, 2, 3, 4], which of the following is a valid CONTIGUOUS subarray?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "[1, 3, 4]",
+        "is_correct": false
+      },
+      {
+        "text": "[2, 3, 4]",
+        "is_correct": true
+      },
+      {
+        "text": "[1, 4]",
+        "is_correct": false
+      },
+      {
+        "text": "[4, 1]",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A contiguous subarray must maintain consecutive positions. [2, 3, 4] uses indices 1,2,3 (consecutive). [1, 3, 4] skips index 1 (value 2), so it's a subsequence but not a subarray."
+  },
+  {
+    "title": "Two-Dimensional Array Access",
+    "text": "In a 3×4 matrix stored in row-major order, how many elements are stored before the element at row 1, column 2 (0-indexed)?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "6",
+        "is_correct": true
+      },
+      {
+        "text": "5",
+        "is_correct": false
+      },
+      {
+        "text": "7",
+        "is_correct": false
+      },
+      {
+        "text": "4",
+        "is_correct": false
+      }
+    ],
+    "explanation": "In row-major, elements before (1,2) = 4 elements in row 0 + 2 elements in row 1 before column 2 = 4 + 2 = 6."
+  },
+  {
+    "title": "Stable Sorting",
+    "text": "Which of the following sorting algorithms is STABLE (preserves relative order of equal elements)?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Merge sort",
+        "is_correct": true
+      },
+      {
+        "text": "Quick sort",
+        "is_correct": false
+      },
+      {
+        "text": "Selection sort",
+        "is_correct": false
+      },
+      {
+        "text": "Heap sort",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Merge sort is stable when implemented correctly (left subarray takes precedence on equal elements). Quick sort's partitioning is typically unstable. Selection sort swaps non-adjacent elements, breaking stability."
+  },
+  {
+    "title": "Two Sum Variant",
+    "text": "Given sorted array [1, 2, 3, 4, 5], which approach finds if any pair sums to 7 in O(N) time?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "Two pointers (left=0, right=N-1)",
+        "is_correct": true
+      },
+      {
+        "text": "Brute force (check all pairs)",
+        "is_correct": false
+      },
+      {
+        "text": "Binary search for the complement",
+        "is_correct": false
+      },
+      {
+        "text": "Hash set (storing seen elements)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "For a sorted array, the two-pointer technique (O(N)) is optimal: start left at 0, right at N-1, adjust based on sum comparison. Hash set (O(N) time, O(N) space) also works but uses extra space. Binary search for complement takes O(N log N)."
+  },
+  {
+    "title": "Pivot in Rotated Array",
+    "text": "In a rotated sorted array [4, 5, 6, 7, 0, 1, 2], which index is the pivot point (the smallest element)?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Index 4 (value 0)",
+        "is_correct": true
+      },
+      {
+        "text": "Index 0 (value 4)",
+        "is_correct": false
+      },
+      {
+        "text": "Index 2 (value 6)",
+        "is_correct": false
+      },
+      {
+        "text": "Index 5 (value 1)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The pivot point in a rotated sorted array is where the smallest element is located (0 at index 4). This is where arr[i] < arr[i-1]. Choosing index 5 (value 1) is close but not the minimum."
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "title": "String Reversal",
+    "text": "Given a string S (1 ≤ |S| ≤ 1000), reverse it character by character and print the result.\n\nInput format:\nA single line containing S\n\nOutput format:\nThe reversed string\n\nExample:\nInput:\nhello\n\nOutput:\nolleh",
+    "difficulty": "easy",
+    "starter_code": "def solve():\n    s = input().strip()\n    # Reverse and print\n\nsolve()\n",
+    "test_cases": [
+      {
+        "stdin": "hello",
+        "expected_output": "olleh",
+        "is_hidden": false
+      },
+      {
+        "stdin": "a",
+        "expected_output": "a",
+        "is_hidden": false
+      },
+      {
+        "stdin": "racecar",
+        "expected_output": "racecar",
+        "is_hidden": true
+      }
+    ]
+  }
+]

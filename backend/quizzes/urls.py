@@ -35,6 +35,7 @@ urlpatterns = [
 
     # Dashboard
     path("dashboard/", views.dashboard_view, name="dashboard"),
+    path("dashboard/activity/", views.activity_heatmap_view, name="dashboard-activity"),
 
     # Health
     path("health/", views.health_view, name="health"),

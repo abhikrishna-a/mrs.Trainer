@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Nth Fibonacci Number",
+    "text": "Given N (0 ≤ N ≤ 10⁵), compute the Nth Fibonacci number modulo 10⁹+7. F(0)=0, F(1)=1, F(N)=F(N-1)+F(N-2).\n\nInput format:\nN\n\nOutput format:\nA single integer\n\nExample:\nInput:\n10\n\nOutput:\n55",
+    "difficulty": "medium",
+    "starter_code": "def solve():\n    n = int(input())\n    MOD = 10**9 + 7\n    # Compute F(n) % MOD\n\nsolve()\n",
+    "test_cases": [
+      {
+        "stdin": "10",
+        "expected_output": "55",
+        "is_hidden": false
+      },
+      {
+        "stdin": "0",
+        "expected_output": "0",
+        "is_hidden": false
+      },
+      {
+        "stdin": "50",
+        "expected_output": "12586269025",
+        "is_hidden": true
+      }
+    ]
+  }
+]

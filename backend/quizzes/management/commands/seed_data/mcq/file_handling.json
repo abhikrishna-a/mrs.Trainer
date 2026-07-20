@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Open Function",
+    "text": "Which statement opens 'file.txt' for writing?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "open('file.txt', 'w')",
+        "is_correct": true
+      },
+      {
+        "text": "open('file.txt', 'r')",
+        "is_correct": false
+      },
+      {
+        "text": "open('file.txt', 'a')",
+        "is_correct": false
+      },
+      {
+        "text": "open('file.txt', 'x')",
+        "is_correct": false
+      }
+    ],
+    "explanation": "'w' opens for writing (overwrites existing content). 'r' is read, 'a' is append, 'x' is exclusive creation."
+  },
+  {
+    "title": "With Statement",
+    "text": "What is the purpose of using 'with open() as f:'?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Auto-closes the file after the block",
+        "is_correct": true
+      },
+      {
+        "text": "Keeps the file open indefinitely",
+        "is_correct": false
+      },
+      {
+        "text": "Improves write speed only",
+        "is_correct": false
+      },
+      {
+        "text": "Opens the file in binary mode",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The 'with' statement (context manager) automatically calls f.close() when the block exits, even if an exception occurs. This prevents resource leaks."
+  },
+  {
+    "title": "Read Methods",
+    "text": "What does f.readlines() return?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "A list of strings, one per line",
+        "is_correct": true
+      },
+      {
+        "text": "A single string of the entire file",
+        "is_correct": false
+      },
+      {
+        "text": "An iterator over file lines",
+        "is_correct": false
+      },
+      {
+        "text": "A tuple of file lines",
+        "is_correct": false
+      }
+    ],
+    "explanation": "f.readlines() reads all lines and returns them as a list of strings (each with a trailing newline). f.read() returns a single string. Iterating over f directly yields lines one by one (memory efficient)."
+  },
+  {
+    "title": "Binary Mode",
+    "text": "How do you open a file in binary write mode?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "open('file.bin', 'wb')",
+        "is_correct": true
+      },
+      {
+        "text": "open('file.bin', 'bw')",
+        "is_correct": false
+      },
+      {
+        "text": "open('file.bin', 'bin')",
+        "is_correct": false
+      },
+      {
+        "text": "open('file.bin', 'w', binary=True)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Binary mode is indicated by appending 'b' to the mode string: 'wb' (write binary), 'rb' (read binary), 'ab' (append binary)."
+  },
+  {
+    "title": "File Exists Check",
+    "text": "Which module provides os.path.exists()?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "os.path",
+        "is_correct": true
+      },
+      {
+        "text": "os",
+        "is_correct": false
+      },
+      {
+        "text": "shutil",
+        "is_correct": false
+      },
+      {
+        "text": "pathlib",
+        "is_correct": false
+      }
+    ],
+    "explanation": "os.path.exists() is in the os.path module. pathlib.Path.exists() is the modern alternative. The 'os' module itself doesn't have exists() directly."
+  },
+  {
+    "title": "JSON Serialization",
+    "text": "Which function writes a Python dict to a JSON file?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "json.dump(data, file)",
+        "is_correct": true
+      },
+      {
+        "text": "json.dumps(data, file)",
+        "is_correct": false
+      },
+      {
+        "text": "json.write(data, file)",
+        "is_correct": false
+      },
+      {
+        "text": "json.serialize(data, file)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "json.dump() writes to a file object. json.dumps() returns a JSON string (s = string). The 's' suffix distinguishes string output from file output."
+  },
+  {
+    "title": "Pathlib Usage",
+    "text": "What is the modern Python way to construct file paths?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "pathlib.Path('dir') / 'file.txt'",
+        "is_correct": true
+      },
+      {
+        "text": "os.path.join('dir', 'file.txt')",
+        "is_correct": false
+      },
+      {
+        "text": "'dir' + '/' + 'file.txt'",
+        "is_correct": false
+      },
+      {
+        "text": "f'dir/{file.txt}'",
+        "is_correct": false
+      }
+    ],
+    "explanation": "pathlib (Python 3.4+) provides an OOP path interface. The / operator joins path components. os.path.join() is the older approach. Manual string concatenation is fragile across OSes."
+  },
+  {
+    "title": "CSV Reading",
+    "text": "Which module is standard for CSV file handling?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "csv",
+        "is_correct": true
+      },
+      {
+        "text": "pandas",
+        "is_correct": false
+      },
+      {
+        "text": "excel",
+        "is_correct": false
+      },
+      {
+        "text": "tablib",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The built-in 'csv' module handles CSV files. pandas is third-party. csv.reader() and csv.writer() provide basic CSV I/O without external dependencies."
+  },
+  {
+    "title": "Pickle Module",
+    "text": "What is the main limitation of pickle serialization?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "Not secure against malicious data",
+        "is_correct": true
+      },
+      {
+        "text": "Only works on text files",
+        "is_correct": false
+      },
+      {
+        "text": "Cannot serialize custom classes",
+        "is_correct": false
+      },
+      {
+        "text": "Requires a database connection",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Pickle can execute arbitrary code during deserialization, making it unsafe to unpickle untrusted data. JSON is preferred for data interchange. Pickle IS designed for Python objects."
+  },
+  {
+    "title": "Context Manager Protocol",
+    "text": "Which methods does a class need to implement the context manager protocol (with statement)?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "__enter__ and __exit__",
+        "is_correct": true
+      },
+      {
+        "text": "__open__ and __close__",
+        "is_correct": false
+      },
+      {
+        "text": "__init__ and __del__",
+        "is_correct": false
+      },
+      {
+        "text": "__start__ and __end__",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A context manager implements __enter__ (returns the resource) and __exit__ (cleanup, called when the block exits). This is what enables the 'with' statement."
+  }
+]

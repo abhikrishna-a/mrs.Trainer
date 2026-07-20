@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import client from '../api/client'
 import { ProblemSummary } from '../types/api'
+import { Code2, CheckSquare, ChevronRight, X } from 'lucide-react'
 
 const difficulties = ['all', 'easy', 'medium', 'hard']
 const types = ['all', 'mcq', 'coding']
@@ -69,20 +70,22 @@ export default function ProblemsPage() {
     <div className="animate-fade-in-up space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="font-display font-black text-xl md:text-2xl text-text-primary">Problems</h2>
-        <span className="font-mono text-xs text-text-muted">{problems.length} problems</span>
+        <span className="font-mono text-[10px] text-text-muted uppercase tracking-wider">{problems.length} problems</span>
       </div>
 
-      <div className="flex flex-wrap gap-3">
+      {/* Filters */}
+      <div className="flex flex-wrap items-center gap-2">
         {activeTopic && (
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-accent-gold/20 border border-accent-gold/30">
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-accent-gold/15 border border-accent-gold/25 animate-scale-in">
             <span className="font-mono text-[10px] font-bold text-accent-gold uppercase tracking-widest">
-              Topic: {activeTopic.toUpperCase()}
+              Topic: {activeTopic}
             </span>
             <button
               onClick={() => updateFilter('topic', '')}
-              className="text-text-muted hover:text-text-primary transition-colors cursor-pointer text-xs"
+              className="text-text-muted hover:text-text-primary transition-colors cursor-pointer ml-1"
+              aria-label="Clear topic filter"
             >
-              ✕
+              <X className="w-3 h-3" />
             </button>
           </div>
         )}
@@ -100,9 +103,12 @@ export default function ProblemsPage() {
         />
       </div>
 
+      {/* Problem list */}
       <div className="space-y-2">
         {problems.length === 0 ? (
-          <p className="text-center text-text-muted py-12 font-mono">No problems match your filters</p>
+          <div className="text-center py-16">
+            <p className="text-text-muted font-mono text-sm">No problems match your filters</p>
+          </div>
         ) : (
           problems.map((problem) => (
             <ProblemRow key={problem.id} problem={problem} onClick={() => navigate(`/problems/${problem.slug}`)} />
@@ -122,16 +128,16 @@ function FilterTabs({
   onChange: (slug: string) => void
 }) {
   return (
-    <div className="flex items-center gap-1.5 flex-wrap">
-      <span className="font-mono text-[10px] font-bold text-text-muted uppercase tracking-widest mr-1">{label}</span>
+    <div className="flex items-center gap-1 flex-wrap">
+      <span className="font-mono text-[10px] font-bold text-text-muted uppercase tracking-widest mr-0.5">{label}</span>
       {items.map((item) => (
         <button
           key={item.slug}
           onClick={() => onChange(item.slug)}
-          className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+          className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer ${
             active === item.slug
-              ? 'bg-accent-gold/20 text-accent-gold border border-accent-gold/30'
-              : 'bg-bg-surface border border-glass-border text-text-secondary hover:bg-bg-surface-hover'
+              ? 'bg-accent-gold/15 text-accent-gold border border-accent-gold/25 shadow-[0_0_12px_rgba(212,160,23,0.08)]'
+              : 'bg-bg-surface border border-glass-border text-text-secondary hover:bg-bg-surface-hover hover:text-text-primary'
           }`}
         >
           {item.name}
@@ -143,29 +149,34 @@ function FilterTabs({
 
 function ProblemRow({ problem, onClick }: { problem: ProblemSummary; onClick: () => void }) {
   const diffColor: Record<string, string> = {
-    easy: 'text-correct bg-correct-bg border-correct-border',
-    medium: 'text-accent-gold bg-accent-gold/10 border-accent-gold/30',
-    hard: 'text-accent-red-soft bg-wrong-bg border-wrong-border',
+    easy: 'text-correct border-correct/30 bg-correct/8',
+    medium: 'text-accent-gold border-accent-gold/25 bg-accent-gold/8',
+    hard: 'text-accent-red-soft border-wrong-border bg-wrong-bg',
   }
 
   return (
-    <div
+    <button
       onClick={onClick}
-      className="flex items-center gap-4 px-5 py-3.5 rounded-xl bg-bg-surface border border-glass-border hover:bg-bg-surface-hover transition-all cursor-pointer"
+      className="w-full flex items-center gap-4 px-5 py-3.5 rounded-xl bg-bg-surface border border-glass-border hover:bg-bg-surface-hover hover:border-accent-gold/15 transition-all duration-200 group text-left cursor-pointer"
     >
+      <div className="shrink-0 w-8 h-8 rounded-lg bg-bg-secondary border border-glass-border flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
+        {problem.question_type === 'mcq' ? (
+          <CheckSquare className="w-4 h-4 text-text-muted" />
+        ) : (
+          <Code2 className="w-4 h-4 text-text-muted" />
+        )}
+      </div>
       <span className="flex-1 font-display font-medium text-sm text-text-primary truncate">{problem.title}</span>
       {problem.topic_name && (
-        <span className="font-mono text-[10px] text-text-muted">{problem.topic_name}</span>
+        <span className="font-mono text-[10px] text-text-muted hidden sm:inline">{problem.topic_name}</span>
       )}
-      <span className={`font-mono text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded border ${diffColor[problem.difficulty] || 'text-text-muted'}`}>
+      <span className={`font-mono text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md border ${diffColor[problem.difficulty] || 'text-text-muted'}`}>
         {problem.difficulty}
       </span>
-      <span className="font-mono text-[10px] text-text-muted uppercase">
-        {problem.question_type === 'mcq' ? 'MCQ' : 'Coding'}
+      <span className="font-mono text-[10px] text-text-muted uppercase hidden sm:inline">
+        {problem.question_type === 'mcq' ? 'MCQ' : 'Code'}
       </span>
-      <svg className="w-4 h-4 text-text-muted shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
-    </div>
+      <ChevronRight className="w-4 h-4 text-text-muted opacity-0 group-hover:opacity-100 transition-all duration-200 -translate-x-1 group-hover:translate-x-0" />
+    </button>
   )
 }

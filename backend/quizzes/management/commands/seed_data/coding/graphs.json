@@ -1,0 +1,25 @@
+[
+  {
+    "title": "DFS Traversal",
+    "text": "Given N vertices (1-indexed) and E edges of an undirected graph, followed by a starting vertex S, print the DFS traversal order (visit smaller vertex first when multiple choices).\n\nInput format:\nN E\na₁ b₁\na₂ b₂\n...\naₑ bₑ\nS\n\nOutput format:\nSpace-separated vertex numbers in DFS order\n\nExample:\nInput:\n4 3\n1 2\n2 3\n2 4\n1\n\nOutput:\n1 2 3 4",
+    "difficulty": "medium",
+    "starter_code": "def solve():\n    n, e = map(int, input().split())\n    adj = [[] for _ in range(n + 1)]\n    for _ in range(e):\n        a, b = map(int, input().split())\n        adj[a].append(b)\n        adj[b].append(a)\n    start = int(input())\n    # Perform DFS from start and print traversal\n\nsolve()\n",
+    "test_cases": [
+      {
+        "stdin": "4 3\n1 2\n2 3\n2 4\n1",
+        "expected_output": "1 2 3 4",
+        "is_hidden": false
+      },
+      {
+        "stdin": "3 2\n1 2\n1 3\n1",
+        "expected_output": "1 2 3",
+        "is_hidden": false
+      },
+      {
+        "stdin": "5 4\n1 2\n2 3\n3 4\n4 5\n1",
+        "expected_output": "1 2 3 4 5",
+        "is_hidden": true
+      }
+    ]
+  }
+]

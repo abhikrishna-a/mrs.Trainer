@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Coin Toss Probability",
+    "text": "What is the probability of getting exactly one head when two fair coins are tossed?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "1/2",
+        "is_correct": true
+      },
+      {
+        "text": "1/4",
+        "is_correct": false
+      },
+      {
+        "text": "2/3",
+        "is_correct": false
+      },
+      {
+        "text": "3/4",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Sample space: HH, HT, TH, TT. Exactly one head: HT, TH (2 outcomes). Probability = 2/4 = 1/2. Choosing 1/4 counts only one of the two single-head outcomes. Choosing 3/4 includes the HH outcome."
+  },
+  {
+    "title": "Dice Probability",
+    "text": "What is the probability of rolling a sum of 7 with two fair dice?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "1/6",
+        "is_correct": true
+      },
+      {
+        "text": "1/12",
+        "is_correct": false
+      },
+      {
+        "text": "1/9",
+        "is_correct": false
+      },
+      {
+        "text": "1/3",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Total outcomes = 36. Ways to sum to 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) = 6 outcomes. Probability = 6/36 = 1/6. Choosing 1/12 counts half the favorable outcomes."
+  },
+  {
+    "title": "Mean Calculation",
+    "text": "The mean of 5, 8, 12, 15, and x is 10. What is x?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "10",
+        "is_correct": true
+      },
+      {
+        "text": "12",
+        "is_correct": false
+      },
+      {
+        "text": "8",
+        "is_correct": false
+      },
+      {
+        "text": "15",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Sum of 5 numbers = 5 \u00d7 10 = 50. Sum of known numbers = 5+8+12+15 = 40. So x = 50 - 40 = 10. Choosing 12 comes from 50-38 (missing one of the known values)."
+  },
+  {
+    "title": "Card Probability",
+    "text": "A card is drawn from a standard deck of 52 cards. What is the probability that it is a king?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "1/13",
+        "is_correct": true
+      },
+      {
+        "text": "1/52",
+        "is_correct": false
+      },
+      {
+        "text": "1/4",
+        "is_correct": false
+      },
+      {
+        "text": "4/13",
+        "is_correct": false
+      }
+    ],
+    "explanation": "There are 4 kings in a deck of 52 cards. Probability = 4/52 = 1/13. Choosing 1/52 counts only one specific king. Choosing 1/4 is the probability of a suit. Choosing 4/13 doesn't simplify correctly."
+  },
+  {
+    "title": "Permutation",
+    "text": "How many ways can 3 books be arranged on a shelf from a set of 5 distinct books?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "60",
+        "is_correct": true
+      },
+      {
+        "text": "20",
+        "is_correct": false
+      },
+      {
+        "text": "120",
+        "is_correct": false
+      },
+      {
+        "text": "15",
+        "is_correct": false
+      }
+    ],
+    "explanation": "This is a permutation of 3 items from 5: P(5,3) = 5!/(5-3)! = 120/2 = 60. Choosing 20 is the combination C(5,3) = 10 doubled. Choosing 120 is 5! (arranging all 5)."
+  },
+  {
+    "title": "Median",
+    "text": "What is the median of the set {3, 7, 2, 9, 5}?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "5",
+        "is_correct": true
+      },
+      {
+        "text": "7",
+        "is_correct": false
+      },
+      {
+        "text": "3",
+        "is_correct": false
+      },
+      {
+        "text": "5.2",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Sorted: {2, 3, 5, 7, 9}. The median is the middle value = 5. Choosing 5.2 is the mean (26/5 = 5.2), a common confusion between mean and median."
+  },
+  {
+    "title": "Combination",
+    "text": "How many ways can 2 students be selected from a class of 10 for a committee?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "45",
+        "is_correct": true
+      },
+      {
+        "text": "90",
+        "is_correct": false
+      },
+      {
+        "text": "20",
+        "is_correct": false
+      },
+      {
+        "text": "100",
+        "is_correct": false
+      }
+    ],
+    "explanation": "C(10,2) = 10!/(2! \u00d7 8!) = (10\u00d79)/(2\u00d71) = 45. Choosing 90 is the permutation P(10,2) = 10\u00d79, which treats order as important. Choosing 20 is 10\u00d72 (incorrect formula)."
+  },
+  {
+    "title": "Independent Events",
+    "text": "The probability that A solves a problem is 1/2 and B solves it is 1/3. What is the probability that at least one solves it?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "2/3",
+        "is_correct": true
+      },
+      {
+        "text": "1/6",
+        "is_correct": false
+      },
+      {
+        "text": "5/6",
+        "is_correct": false
+      },
+      {
+        "text": "1/2",
+        "is_correct": false
+      }
+    ],
+    "explanation": "P(at least one) = 1 - P(neither) = 1 - (1-1/2)(1-1/3) = 1 - (1/2)(2/3) = 1 - 1/3 = 2/3. Choosing 1/6 multiplies the probabilities (both solve). Choosing 5/6 adds them (1/2+1/3)."
+  },
+  {
+    "title": "Mode",
+    "text": "What is the mode of the set {2, 4, 4, 6, 7, 7, 7, 9}?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "7",
+        "is_correct": true
+      },
+      {
+        "text": "4",
+        "is_correct": false
+      },
+      {
+        "text": "6",
+        "is_correct": false
+      },
+      {
+        "text": "5.75",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The mode is the value that appears most frequently. 7 appears 3 times, 4 appears 2 times, others appear once. Mode = 7. Choosing 5.75 is the mean. Choosing 4 is the second most frequent value."
+  },
+  {
+    "title": "Conditional Probability",
+    "text": "A bag contains 4 red and 6 blue marbles. Two marbles are drawn without replacement. What is the probability both are red?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "2/15",
+        "is_correct": true
+      },
+      {
+        "text": "4/25",
+        "is_correct": false
+      },
+      {
+        "text": "1/6",
+        "is_correct": false
+      },
+      {
+        "text": "8/45",
+        "is_correct": false
+      }
+    ],
+    "explanation": "P(first red) = 4/10 = 2/5. P(second red | first red) = 3/9 = 1/3. P(both red) = (2/5)(1/3) = 2/15. Choosing 4/25 uses replacement (4/10 \u00d7 4/10). Choosing 1/6 uses (4/10)(4/9) = 16/90 = 8/45, not simplified correctly."
+  }
+]

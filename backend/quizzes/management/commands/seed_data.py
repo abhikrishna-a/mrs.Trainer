@@ -1,85 +1,10 @@
+import json
+import os
 import random
-import math
 from django.core.management.base import BaseCommand
 from quizzes.models import Role, Topic, Question, AnswerOption, StarterCode, TestCase
 
-# ─── Question text templates ──────────────────────────────
-
-MCQ_TEMPLATES = {
-    "quantitative": [
-        "If x + {a} = {b}, what is the value of x?",
-        "What is {a}% of {b}?",
-        "Simplify: {a} + {b} * {c} - {d}",
-        "A train travels {a} km in {b} hours. What is its speed in km/h?",
-        "Find the average of {a}, {b}, and {c}.",
-        "If the ratio of two numbers is {a}:{b} and their sum is {c}, find the larger number.",
-        "What is the probability of rolling a {a} on a fair six-sided die?",
-        "If an item costs Rs.{a} and is sold at a {b}% profit, what is the selling price?",
-        "How many distinct ways can {a} books be arranged on a shelf?",
-        "The simple interest on Rs.{a} at {b}% per annum for {c} years is:",
-    ],
-    "logical-reasoning": [
-        "Find the next term in the series: {a}, {b}, {c}, {d}, ?",
-        "All {A} are {B}. Some {B} are {C}. Therefore:",
-        "If '{a}' is coded as '{b}', how is '{c}' coded?",
-        "Pointing to a man, a woman said, 'He is the son of my mother's only daughter.' How is the man related to the woman?",
-        "A is the brother of B. B is the sister of C. How is A related to C?",
-        "If a clock shows {a}:{b}, what is the angle between the hour and minute hands?",
-        "Statement: {statement_1}. Conclusion: {conclusion}",
-        "In a certain language, '{a}' means '{b}'. What does '{c}' mean?",
-        "Which of the following does not belong to the group?",
-        "If {a} > {b} and {b} > {c}, then:",
-    ],
-    "python": [
-        "What is the output of `print(type([]))`?",
-        "Which of the following is a mutable data type in Python?",
-        "What will be the result of `{list_expr}`?",
-        "Which keyword is used to define a function in Python?",
-        "What does the `len()` function return for an empty list?",
-        "Which of the following correctly handles an exception in Python?",
-        "What is the output of `print(2 ** {a})`?",
-        "Which method is used to add an element to a set?",
-        "What will `'{a},{b},{c}'.split(',')` return?",
-        "Which of the following creates a list comprehension?",
-    ],
-    "dsa": [
-        "What is the time complexity of binary search on a sorted array of {a} elements?",
-        "Which data structure operates on a LIFO principle?",
-        "What is the minimum number of nodes in a complete binary tree of height {a}?",
-        "Which sorting algorithm has the best average-case time complexity?",
-        "How many edges does a graph with {a} vertices have if it is a tree?",
-        "What is the output of an in-order traversal of this binary tree?",
-        "Which data structure is best for implementing a priority queue?",
-        "What is the worst-case time complexity of quicksort?",
-        "A hash table with {a} slots uses linear probing. How many collisions occur for keys {b}?",
-        "What is the space complexity of depth-first search?",
-    ],
-}
-
-CODING_TEMPLATES = {
-    "python": [
-        "Write a function `solve()` that returns the sum of all even numbers from 1 to {a}.",
-        "Implement `solve()` to check whether a given string is a palindrome.",
-        "Write `solve()` that finds the factorial of {a} using recursion.",
-        "Implement `solve()` to return the {a}th Fibonacci number.",
-        "Write `solve()` that counts the number of vowels in a given string.",
-    ],
-    "dsa": [
-        "Implement `solve()` to reverse a linked list.",
-        "Write `solve()` to find the maximum subarray sum (Kadane's algorithm).",
-        "Implement `solve()` to merge two sorted arrays.",
-        "Write `solve()` to detect a cycle in a linked list.",
-        "Implement `solve()` to perform level-order traversal of a binary tree.",
-    ],
-}
-
-def _pick_template(templates, topic_name):
-    pool = templates.get(topic_name, templates.get(list(templates.keys())[0], []))
-    return random.choice(pool)
-
-# ─── Distribution constants ──────────────────────────────
-# Full (JS coding available): 1000 total
-# No-JS-coding: 898 total
+FIXTURES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "seed_data")
 
 ROLES_DATA = [
     {"name": "Quantitative Aptitude", "slug": "quantitative", "icon": "Q"},
@@ -88,154 +13,200 @@ ROLES_DATA = [
     {"name": "Data Structures & Algorithms", "slug": "dsa", "icon": "DS"},
 ]
 
-# Per-role counts: (mcq_count, coding_count)
-FULL_DISTRIBUTION = {
-    "quantitative": (193, 0),
-    "logical-reasoning": (182, 0),
-    "python": (111, 117),
-    "dsa": (60, 166),
+TOPIC_DATA = {
+    "quantitative": [
+        ("Algebra", "ALG", "A"),
+        ("Arithmetic", "ART", "B"),
+        ("Geometry", "GEO", "C"),
+        ("Number Theory", "NUM", "D"),
+        ("Probability & Stats", "PRB", "E"),
+    ],
+    "logical-reasoning": [
+        ("Series Completion", "SER", "F"),
+        ("Syllogisms", "SYL", "G"),
+        ("Blood Relations", "BLD", "H"),
+        ("Direction Sense", "DIR", "I"),
+        ("Puzzles", "PZZ", "J"),
+    ],
+    "python": [
+        ("Basics", "PYB", "K"),
+        ("Data Types", "PYD", "L"),
+        ("OOP", "PYO", "M"),
+        ("File Handling", "PYF", "N"),
+        ("Libraries", "PYL", "O"),
+    ],
+    "dsa": [
+        ("Arrays", "ARR", "U"),
+        ("Linked Lists", "LNK", "V"),
+        ("Trees", "TRE", "W"),
+        ("Graphs", "GRF", "X"),
+        ("Dynamic Programming", "DYN", "Y"),
+    ],
 }
 
-# Difficulty split per category
-DIFFICULTY_SPLIT = {"easy": 0.30, "medium": 0.40, "hard": 0.30}
+FILENAME_TOPIC_MAP = {
+    "algebra": "Algebra",
+    "arithmetic": "Arithmetic",
+    "geometry": "Geometry",
+    "number_theory": "Number Theory",
+    "probability_stats": "Probability & Stats",
+    "series_completion": "Series Completion",
+    "syllogisms": "Syllogisms",
+    "blood_relations": "Blood Relations",
+    "direction_sense": "Direction Sense",
+    "puzzles": "Puzzles",
+    "arrays": "Arrays",
+    "linked_lists": "Linked Lists",
+    "trees": "Trees",
+    "graphs": "Graphs",
+    "dynamic_programming": "Dynamic Programming",
+    "basics": "Basics",
+    "data_types": "Data Types",
+    "oop": "OOP",
+    "file_handling": "File Handling",
+    "libraries": "Libraries",
+    "python_basics": "Basics",
+    "python_data_types": "Data Types",
+    "python_oop": "OOP",
+    "python_file_handling": "File Handling",
+    "python_libraries": "Libraries",
+}
 
 
-def distribute_difficulty(count):
-    easy = math.floor(count * DIFFICULTY_SPLIT["easy"])
-    hard = math.floor(count * DIFFICULTY_SPLIT["hard"])
-    medium = count - easy - hard
-    return {"easy": easy, "medium": medium, "hard": hard}
+def _filename_to_topic_name(filename):
+    name = filename.replace(".json", "")
+    return FILENAME_TOPIC_MAP.get(name, name.replace("_", " ").title())
 
 
 class Command(BaseCommand):
-    help = "Seed questions for the aptitude platform"
+    help = "Seed questions from curated fixture files"
 
     def handle(self, *args, **options):
-        distribution = FULL_DISTRIBUTION
-        total = sum(sum(v) for v in distribution.values())
-
-        self.stdout.write(f"Seeding {total} questions...")
+        Question.objects.all().delete()
 
         for rd in ROLES_DATA:
-            role, _ = Role.objects.get_or_create(
+            Role.objects.get_or_create(
                 slug=rd["slug"],
                 defaults={"name": rd["name"], "description": f"{rd['name']} questions"},
             )
 
-        topics = self._create_topics()
-        self._create_questions(distribution, topics)
-
-        self.stdout.write(self.style.SUCCESS(f"Seeded {Question.objects.count()} questions total."))
+        self._create_topics()
+        mcq_count = self._load_mcq_fixtures()
+        coding_count = self._load_coding_fixtures()
+        total = Question.objects.count()
+        self.stdout.write(
+            self.style.SUCCESS(
+                f"Seeded {total} questions ({mcq_count} MCQ, {coding_count} coding) across "
+                f"{Topic.objects.count()} topics."
+            )
+        )
 
     def _create_topics(self):
-        topic_data = {
-            "quantitative": [
-                ("Algebra", "ALG", "A"), ("Arithmetic", "ART", "B"),
-                ("Geometry", "GEO", "C"), ("Number Theory", "NUM", "D"),
-                ("Probability & Stats", "PRB", "E"),
-            ],
-            "logical-reasoning": [
-                ("Series Completion", "SER", "F"), ("Syllogisms", "SYL", "G"),
-                ("Blood Relations", "BLD", "H"), ("Direction Sense", "DIR", "I"),
-                ("Puzzles", "PZZ", "J"),
-            ],
-            "python": [
-                ("Basics", "PYB", "K"), ("Data Types", "PYD", "L"),
-                ("OOP", "PYO", "M"), ("File Handling", "PYF", "N"),
-                ("Libraries", "PYL", "O"),
-            ],
-            "dsa": [
-                ("Arrays", "ARR", "U"), ("Linked Lists", "LNK", "V"),
-                ("Trees", "TRE", "W"), ("Graphs", "GRF", "X"),
-                ("Dynamic Programming", "DYN", "Y"),
-            ],
-        }
-
-        topics = {}
-        for role_slug, tlist in topic_data.items():
+        for role_slug, tlist in TOPIC_DATA.items():
             role = Role.objects.get(slug=role_slug)
             for i, (name, short, icon) in enumerate(tlist):
-                topic, _ = Topic.objects.get_or_create(
-                    role=role, name=name,
+                Topic.objects.get_or_create(
+                    role=role,
+                    name=name,
                     defaults={"short_name": short, "icon": icon, "order": i},
                 )
-                topics.setdefault(role_slug, []).append(topic)
-        return topics
 
-    def _create_questions(self, distribution, topics):
-        q_num = 0
-        for role_slug, (mcq_count, coding_count) in distribution.items():
-            role_topics = topics[role_slug]
+    def _load_mcq_fixtures(self):
+        mcq_dir = os.path.join(FIXTURES_DIR, "mcq")
+        if not os.path.isdir(mcq_dir):
+            return 0
+        count = 0
+        for fname in sorted(os.listdir(mcq_dir)):
+            if not fname.endswith(".json"):
+                continue
+            path = os.path.join(mcq_dir, fname)
+            with open(path, encoding="utf-8") as f:
+                questions_data = json.load(f)
 
-            for qtype, count in [("mcq", mcq_count), ("coding", coding_count)]:
-                if count == 0:
-                    continue
-                diffs = distribute_difficulty(count)
-                topic_role_name = role_topics[0].role.name if role_topics else role_slug
-                for diff, n in diffs.items():
-                    for i in range(n):
-                        q_num += 1
-                        topic = random.choice(role_topics)
-                        slug = f"{role_slug}-{qtype}-{diff}-{q_num}"
-                        title = f"Q{q_num}: {diff.title()} {qtype.upper()}"
+            topic_name = _filename_to_topic_name(fname)
+            try:
+                topic = Topic.objects.get(name__iexact=topic_name)
+            except Topic.DoesNotExist:
+                self.stdout.write(
+                    self.style.WARNING(f"Topic '{topic_name}' not found, skipping {fname}")
+                )
+                continue
 
-                        text = self._generate_question_text(
-                            topic_name=topic.name,
-                            topic_role_name=topic_role_name,
-                            diff=diff, qtype=qtype, q_num=q_num
-                        )
+            for q_data in questions_data:
+                slug = self._make_slug(topic, q_data["title"])
+                q = Question.objects.create(
+                    topic=topic,
+                    title=q_data["title"],
+                    slug=slug,
+                    text=q_data["text"],
+                    explanation=q_data.get("explanation", ""),
+                    difficulty=q_data["difficulty"],
+                    question_type="mcq",
+                )
+                options = list(q_data["options"])
+                random.shuffle(options)
+                for i, opt in enumerate(options):
+                    AnswerOption.objects.create(
+                        question=q,
+                        text=opt["text"],
+                        is_correct=opt["is_correct"],
+                        order=i,
+                    )
+                count += 1
+        return count
 
-                        q = Question.objects.create(
-                            topic=topic,
-                            title=title,
-                            slug=slug,
-                            text=text,
-                            difficulty=diff,
-                            question_type=qtype,
-                            order=q_num,
-                        )
+    def _load_coding_fixtures(self):
+        coding_dir = os.path.join(FIXTURES_DIR, "coding")
+        if not os.path.isdir(coding_dir):
+            return 0
+        count = 0
+        for fname in sorted(os.listdir(coding_dir)):
+            if not fname.endswith(".json"):
+                continue
+            path = os.path.join(coding_dir, fname)
+            with open(path, encoding="utf-8") as f:
+                problems_data = json.load(f)
 
-                        if qtype == "mcq":
-                            self._create_mcq_options(q)
-                        else:
-                            self._create_coding(q)
+            topic_name = _filename_to_topic_name(fname)
+            try:
+                topic = Topic.objects.get(name__iexact=topic_name)
+            except Topic.DoesNotExist:
+                self.stdout.write(
+                    self.style.WARNING(f"Topic '{topic_name}' not found, skipping {fname}")
+                )
+                continue
 
-    def _generate_question_text(self, topic_name, topic_role_name, diff, qtype, q_num):
-        if qtype == "mcq":
-            templates = MCQ_TEMPLATES.get(topic_role_name, list(MCQ_TEMPLATES.values())[0])
-            template = random.choice(templates)
-            a, b, c, d = random.randint(2, 99), random.randint(1, 500), random.randint(1, 50), random.randint(1, 20)
-            return template.format(
-                a=a, b=b, c=c, d=d,
-                A=chr(65 + random.randint(0, 25)), B=chr(65 + random.randint(0, 25)), C=chr(65 + random.randint(0, 25)),
-                list_expr=f"[x**2 for x in range({a})]",
-                statement_1=f"All {chr(65 + random.randint(0, 25))}s are {chr(65 + random.randint(0, 25))}s",
-                conclusion=f"Some {chr(65 + random.randint(0, 25))}s are {chr(65 + random.randint(0, 25))}s",
-            )
-        templates = CODING_TEMPLATES.get(topic_role_name, list(CODING_TEMPLATES.values())[0])
-        template = random.choice(templates)
-        return template.format(a=random.randint(5, 50))
+            for p_data in problems_data:
+                slug = self._make_slug(topic, p_data["title"])
+                q = Question.objects.create(
+                    topic=topic,
+                    title=p_data["title"],
+                    slug=slug,
+                    text=p_data["text"],
+                    difficulty=p_data["difficulty"],
+                    question_type="coding",
+                )
+                StarterCode.objects.create(
+                    question=q,
+                    python_code=p_data["starter_code"],
+                )
+                for i, tc in enumerate(p_data["test_cases"]):
+                    TestCase.objects.create(
+                        question=q,
+                        stdin=tc["stdin"],
+                        expected_output=tc["expected_output"],
+                        is_hidden=tc.get("is_hidden", False),
+                        order=tc.get("order", i),
+                    )
+                count += 1
+        return count
 
-    def _create_mcq_options(self, q):
-        correct_idx = random.randint(0, 3)
-        for i in range(4):
-            AnswerOption.objects.create(
-                question=q,
-                text=f"Option {'ABCD'[i]}",
-                is_correct=(i == correct_idx),
-                order=i,
-            )
-
-    def _create_coding(self, q):
-        StarterCode.objects.create(
-            question=q,
-            python_code="def solve():\n    pass\n",
-        )
-        for i in range(3):
-            TestCase.objects.create(
-                question=q,
-                stdin="",
-                expected_output=f"test output {i}"[:999],
-                is_hidden=(i >= 2),
-                order=i,
-            )
+    def _make_slug(self, topic, title):
+        base = f"{topic.short_name.lower()}-{title.lower().replace(' ', '-')}"
+        base = "".join(c for c in base if c.isalnum() or c == "-")[:100]
+        slug = base
+        counter = 1
+        while Question.objects.filter(slug=slug).exists():
+            counter += 1
+            slug = f"{base}-{counter}"
+        return slug

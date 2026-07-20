@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Height of Binary Tree",
+    "text": "Given an array representing a complete binary tree in level order (-1 for null), compute its height. The height of a tree with only the root is 1 (counting nodes).\n\nInput format:\na₁ a₂ ... aₙ -1 for null nodes\n\nOutput format:\nA single integer\n\nExample:\nInput:\n1 2 3 4 -1 -1 5\n\nOutput:\n3",
+    "difficulty": "easy",
+    "starter_code": "def solve():\n    arr = list(map(int, input().split()))\n    # Compute the height of the binary tree\n\nsolve()\n",
+    "test_cases": [
+      {
+        "stdin": "1 2 3 4 -1 -1 5",
+        "expected_output": "3",
+        "is_hidden": false
+      },
+      {
+        "stdin": "1",
+        "expected_output": "1",
+        "is_hidden": false
+      },
+      {
+        "stdin": "1 2 -1 3 -1 4 -1",
+        "expected_output": "4",
+        "is_hidden": true
+      }
+    ]
+  }
+]

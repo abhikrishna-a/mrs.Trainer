@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Count Lines in String",
+    "text": "Given a multi-line string (ending with 'END'), count the number of lines (excluding the 'END' marker). Print the count.\n\nInput format:\nMultiple lines of text ending with 'END' on its own line\n\nOutput format:\nA single integer\n\nExample:\nInput:\nHello\nWorld\nFoo\nEND\n\nOutput:\n3",
+    "difficulty": "easy",
+    "starter_code": "def solve():\n    count = 0\n    while True:\n        line = input()\n        if line == 'END':\n            break\n        count += 1\n    print(count)\n\nsolve()\n",
+    "test_cases": [
+      {
+        "stdin": "Hello\nWorld\nEND",
+        "expected_output": "2",
+        "is_hidden": false
+      },
+      {
+        "stdin": "END",
+        "expected_output": "0",
+        "is_hidden": false
+      },
+      {
+        "stdin": "A\nB\nC\nD\nEND",
+        "expected_output": "4",
+        "is_hidden": true
+      }
+    ]
+  }
+]

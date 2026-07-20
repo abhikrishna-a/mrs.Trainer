@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Math Module",
+    "text": "Which math function returns the square root of a number?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "math.sqrt(x)",
+        "is_correct": true
+      },
+      {
+        "text": "math.sqr(x)",
+        "is_correct": false
+      },
+      {
+        "text": "math.root(x, 2)",
+        "is_correct": false
+      },
+      {
+        "text": "math.pow(x, 0.5)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "math.sqrt(x) returns the square root. math.pow(x, 0.5) also works but returns a float, while ** 0.5 is the built-in operator."
+  },
+  {
+    "title": "Random Module",
+    "text": "Which function returns a random integer between 1 and 10 (inclusive)?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "random.randint(1, 10)",
+        "is_correct": true
+      },
+      {
+        "text": "random.random(1, 10)",
+        "is_correct": false
+      },
+      {
+        "text": "random.choice(1, 10)",
+        "is_correct": false
+      },
+      {
+        "text": "random.range(1, 10)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "random.randint(a, b) returns a random integer N where a ≤ N ≤ b. random.random() returns a float in [0,1). random.choice() picks from a sequence."
+  },
+  {
+    "title": "Datetime Module",
+    "text": "How do you get the current date and time in Python?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "datetime.datetime.now()",
+        "is_correct": true
+      },
+      {
+        "text": "datetime.today()",
+        "is_correct": false
+      },
+      {
+        "text": "datetime.current()",
+        "is_correct": false
+      },
+      {
+        "text": "datetime.gettime()",
+        "is_correct": false
+      }
+    ],
+    "explanation": "datetime.datetime.now() returns the current local date and time. datetime.date.today() returns only the date. datetime.now() without module prefix would fail."
+  },
+  {
+    "title": "Collections - Counter",
+    "text": "After from collections import Counter; c = Counter('aabbc'), what is c['b']?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "2",
+        "is_correct": true
+      },
+      {
+        "text": "1",
+        "is_correct": false
+      },
+      {
+        "text": "3",
+        "is_correct": false
+      },
+      {
+        "text": "0",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Counter counts hashable objects. 'aabbc' has: a=2, b=2, c=1. c['b'] returns 2. c['d'] returns 0 (no KeyError, unlike regular dict)."
+  },
+  {
+    "title": "Itertools - Combinations",
+    "text": "What does list(itertools.combinations('ABC', 2)) return?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "[('A','B'), ('A','C'), ('B','C')]",
+        "is_correct": true
+      },
+      {
+        "text": "[('A','B'), ('B','C'), ('C','A')]",
+        "is_correct": false
+      },
+      {
+        "text": "[('A','B'), ('B','A'), ('A','C'), ('C','A'), ('B','C'), ('C','B')]",
+        "is_correct": false
+      },
+      {
+        "text": "[('A',), ('B',), ('C',)]",
+        "is_correct": false
+      }
+    ],
+    "explanation": "combinations produces r-length tuples in lexicographic order WITHOUT replacement. permutations would include all orderings like ('B','A'). 'ABC' with 2 gives 3 pairs."
+  },
+  {
+    "title": "OS Module - Directory Listing",
+    "text": "Which function lists files in a directory?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "os.listdir(path)",
+        "is_correct": true
+      },
+      {
+        "text": "os.ls(path)",
+        "is_correct": false
+      },
+      {
+        "text": "os.dir(path)",
+        "is_correct": false
+      },
+      {
+        "text": "os.files(path)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "os.listdir(path) returns a list of entry names in the directory. os.ls() doesn't exist in Python's os module (it's a Unix shell command)."
+  },
+  {
+    "title": "Sys Module - Command Line Args",
+    "text": "Which attribute of sys contains command-line arguments?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "sys.argv",
+        "is_correct": true
+      },
+      {
+        "text": "sys.args",
+        "is_correct": false
+      },
+      {
+        "text": "sys.arguments",
+        "is_correct": false
+      },
+      {
+        "text": "sys.command_line",
+        "is_correct": false
+      }
+    ],
+    "explanation": "sys.argv is a list where argv[0] is the script name and argv[1:] are the command-line arguments. sys.args doesn't exist."
+  },
+  {
+    "title": "Regular Expressions",
+    "text": "Which function finds all non-overlapping matches of a pattern in a string?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "re.findall(pattern, string)",
+        "is_correct": true
+      },
+      {
+        "text": "re.match(pattern, string)",
+        "is_correct": false
+      },
+      {
+        "text": "re.search(pattern, string)",
+        "is_correct": false
+      },
+      {
+        "text": "re.extract(pattern, string)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "re.findall() returns all non-overlapping matches as a list. re.match() checks only at the start. re.search() finds the first match anywhere."
+  },
+  {
+    "title": "Deque from Collections",
+    "text": "What makes collections.deque efficient compared to a list?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "O(1) append and pop from both ends",
+        "is_correct": true
+      },
+      {
+        "text": "O(1) random access by index",
+        "is_correct": false
+      },
+      {
+        "text": "Automatically sorted order",
+        "is_correct": false
+      },
+      {
+        "text": "Memory-efficient for large data",
+        "is_correct": false
+      }
+    ],
+    "explanation": "deque provides O(1) append/pop from both ends (left and right). Lists have O(1) at the right end but O(N) at the left. Random access is O(N) for deque vs O(1) for list."
+  },
+  {
+    "title": "Functools - LRU Cache",
+    "text": "What does @functools.lru_cache(maxsize=128) do?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "Caches function return values for up to 128 calls",
+        "is_correct": true
+      },
+      {
+        "text": "Limits the function to 128 calls total",
+        "is_correct": false
+      },
+      {
+        "text": "Speeds up function compilation",
+        "is_correct": false
+      },
+      {
+        "text": "Creates 128 copies of the function",
+        "is_correct": false
+      }
+    ],
+    "explanation": "@lru_cache caches the return values of a function based on arguments. When the cache exceeds maxsize, least recently used entries are evicted. This is useful for DP/memoization."
+  }
+]

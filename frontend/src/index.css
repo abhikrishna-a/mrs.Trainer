@@ -9,6 +9,7 @@
   --color-bg-surface: rgba(26, 26, 38, 0.65);
   --color-bg-surface-hover: rgba(36, 36, 52, 0.75);
   --color-bg-surface-active: rgba(46, 46, 62, 0.8);
+  --color-bg-elevated: rgba(32, 32, 48, 0.85);
 
   --color-text-primary: #e8e6e3;
   --color-text-secondary: #9a9797;
@@ -44,15 +45,32 @@
   --color-editor-bg: #1e1e2e;
 
   --animate-fade-in-up: fade-in-up 0.4s ease both;
+  --animate-fade-in: fade-in 0.3s ease both;
+  --animate-scale-in: scale-in 0.3s ease both;
+  --animate-slide-in-right: slide-in-right 0.3s ease both;
   --animate-option-reveal: option-reveal 0.35s ease both;
   --animate-omr-pop: omr-pop 0.3s ease both;
   --animate-wrong-shake: wrong-shake 0.4s ease;
   --animate-correct-pulse: correct-pulse 0.4s ease;
+  --animate-spin-slow: spin 3s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
 }
 
 @keyframes fade-in-up {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 @keyframes option-reveal {
   from { opacity: 0; transform: translateX(-12px); }
@@ -73,6 +91,13 @@
   0% { transform: scale(1); }
   50% { transform: scale(1.02); }
   100% { transform: scale(1); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes orbit {
@@ -103,6 +128,10 @@
   50% { transform: translate(-3px, 7px); }
   75% { transform: translate(-5px, -3px); }
 }
+@keyframes mesh-morph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
 
 html { scroll-behavior: smooth; }
 
@@ -112,6 +141,17 @@ body {
   color: var(--color-text-primary);
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(212, 160, 23, 0.25);
+  color: var(--color-text-primary);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 @media (prefers-reduced-motion: reduce) {

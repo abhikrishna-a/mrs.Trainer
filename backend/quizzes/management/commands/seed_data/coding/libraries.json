@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Generate Random Password",
+    "text": "Given length L (4 ≤ L ≤ 20), generate a random password of length L containing lowercase letters, uppercase letters, and digits. Print the password.\n\nInput format:\nL\n\nOutput format:\nA single line\n\nExample:\nInput:\n8\n\nOutput:\naB3dEf7g\n(Actual output will vary due to randomness)",
+    "difficulty": "medium",
+    "starter_code": "import random\nimport string\n\ndef solve():\n    L = int(input())\n    # Generate and print a random password of length L\n\nsolve()\n",
+    "test_cases": [
+      {
+        "stdin": "8",
+        "expected_output": "",
+        "is_hidden": false
+      }
+    ]
+  }
+]

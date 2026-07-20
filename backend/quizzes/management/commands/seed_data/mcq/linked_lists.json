@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Linked List Node Structure",
+    "text": "What is the minimum number of fields required in a singly linked list node?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "2 (data, next pointer)",
+        "is_correct": true
+      },
+      {
+        "text": "1 (data only)",
+        "is_correct": false
+      },
+      {
+        "text": "3 (data, prev pointer, next pointer)",
+        "is_correct": false
+      },
+      {
+        "text": "2 (data, prev pointer)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A singly linked list node needs just data (the value) and a next pointer (reference to the next node). The prev pointer is only needed for doubly linked lists."
+  },
+  {
+    "title": "Head Insertion Complexity",
+    "text": "What is the time complexity of inserting a node at the HEAD of a singly linked list?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "O(1)",
+        "is_correct": true
+      },
+      {
+        "text": "O(N)",
+        "is_correct": false
+      },
+      {
+        "text": "O(log N)",
+        "is_correct": false
+      },
+      {
+        "text": "O(N²)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Head insertion in a linked list is O(1): create the new node, point its next to the current head, update the head pointer. No traversal needed."
+  },
+  {
+    "title": "Tail Pointer Benefit",
+    "text": "What advantage does maintaining a tail pointer provide in a singly linked list?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "O(1) insertion at the end",
+        "is_correct": true
+      },
+      {
+        "text": "O(1) deletion at the end",
+        "is_correct": false
+      },
+      {
+        "text": "O(1) access to any element",
+        "is_correct": false
+      },
+      {
+        "text": "O(1) reversal of the list",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A tail pointer allows O(1) insertion at the end (append). Without it, you'd need O(N) traversal to find the last node. Deletion at the end still requires O(N) to find the second-to-last node."
+  },
+  {
+    "title": "Finding Middle Element",
+    "text": "What is the optimal way to find the middle node of a singly linked list in one pass?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Tortoise and hare (slow and fast pointers)",
+        "is_correct": true
+      },
+      {
+        "text": "Count nodes first, then traverse to middle",
+        "is_correct": false
+      },
+      {
+        "text": "Use an array to store all node addresses",
+        "is_correct": false
+      },
+      {
+        "text": "Recursively find the middle",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The slow-fast pointer technique (tortoise moves 1 step, hare moves 2 steps) finds the middle in one pass without extra space. When hare reaches the end, slow is at the middle."
+  },
+  {
+    "title": "Linked List vs Array - Insertion",
+    "text": "In which scenario does a linked list outperform an array?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Frequent insertions in the middle",
+        "is_correct": true
+      },
+      {
+        "text": "Random access by index",
+        "is_correct": false
+      },
+      {
+        "text": "Memory locality during iteration",
+        "is_correct": false
+      },
+      {
+        "text": "Binary search",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Linked lists excel at insertions in the middle: O(1) after reaching the position (vs O(N) for arrays due to shifting). Arrays are better for random access (O(1) vs O(N))."
+  },
+  {
+    "title": "Cycle Detection",
+    "text": "Which algorithm is commonly used to detect a cycle in a linked list?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Floyd's cycle detection (slow-fast)",
+        "is_correct": true
+      },
+      {
+        "text": "Binary search",
+        "is_correct": false
+      },
+      {
+        "text": "Merge sort",
+        "is_correct": false
+      },
+      {
+        "text": "Depth-first search",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Floyd's cycle detection uses two pointers: slow (1 step) and fast (2 steps). If they meet, there's a cycle. This is O(N) time and O(1) space."
+  },
+  {
+    "title": "Doubly Linked List Deletion",
+    "text": "In a doubly linked list, how many pointer updates are needed to delete a node (given a direct reference to the node)?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "2",
+        "is_correct": true
+      },
+      {
+        "text": "0",
+        "is_correct": false
+      },
+      {
+        "text": "4",
+        "is_correct": false
+      },
+      {
+        "text": "1",
+        "is_correct": false
+      }
+    ],
+    "explanation": "To delete a node in a doubly linked list: update prev.next = current.next, and next.prev = current.prev. That's 2 pointer updates. In a singly linked list, you'd need the previous node, requiring traversal."
+  },
+  {
+    "title": "Reversing a Linked List",
+    "text": "What is the space complexity of iteratively reversing a singly linked list?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "O(1)",
+        "is_correct": true
+      },
+      {
+        "text": "O(N)",
+        "is_correct": false
+      },
+      {
+        "text": "O(log N)",
+        "is_correct": false
+      },
+      {
+        "text": "O(N²)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Iterative reversal uses 3 pointers (prev, curr, next), which is O(1) extra space. Recursive reversal uses O(N) stack space due to the call stack."
+  },
+  {
+    "title": "Skip List Purpose",
+    "text": "What problem does a skip list solve in linked lists?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "Slow search in sorted linked lists",
+        "is_correct": true
+      },
+      {
+        "text": "Memory overhead of pointers",
+        "is_correct": false
+      },
+      {
+        "text": "Inability to store duplicate values",
+        "is_correct": false
+      },
+      {
+        "text": "Thread safety during concurrent access",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Skip lists add multiple levels of 'express lanes' to speed up search in sorted linked lists, achieving O(log N) average search time instead of O(N)."
+  },
+  {
+    "title": "LRU Cache Data Structure",
+    "text": "Which data structure combination is typically used to implement an LRU cache?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "Doubly linked list + hash map",
+        "is_correct": true
+      },
+      {
+        "text": "Array + binary search tree",
+        "is_correct": false
+      },
+      {
+        "text": "Singly linked list + hash map",
+        "is_correct": false
+      },
+      {
+        "text": "Stack + queue",
+        "is_correct": false
+      }
+    ],
+    "explanation": "An LRU cache uses a doubly linked list (for O(1) move-to-front) and a hash map (for O(1) lookups by key). The doubly linked list allows the most recently used item to be moved to the head efficiently."
+  }
+]

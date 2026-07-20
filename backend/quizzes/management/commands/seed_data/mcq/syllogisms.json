@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Universal Affirmative",
+    "text": "Statements:\nAll squares are rectangles.\nAll rectangles are quadrilaterals.\n\nWhich conclusion is definitely true?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "All squares are quadrilaterals",
+        "is_correct": true
+      },
+      {
+        "text": "All quadrilaterals are squares",
+        "is_correct": false
+      },
+      {
+        "text": "Some rectangles are not squares",
+        "is_correct": false
+      },
+      {
+        "text": "No square is a quadrilateral",
+        "is_correct": false
+      }
+    ],
+    "explanation": "If all A are B and all B are C, then all A are C (syllogism rule). So all squares are quadrilaterals. The converse (all quadrilaterals are squares) is false."
+  },
+  {
+    "title": "Universal Negative",
+    "text": "Statements:\nNo bird is a mammal.\nAll bats are mammals.\n\nWhich conclusion is definitely true?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "No bat is a bird",
+        "is_correct": true
+      },
+      {
+        "text": "No mammal is a bat",
+        "is_correct": false
+      },
+      {
+        "text": "All bats are birds",
+        "is_correct": false
+      },
+      {
+        "text": "Some birds are bats",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Bats are mammals (statement 2). No bird is a mammal (statement 1). Therefore, no bat can be a bird. 'No mammal is a bat' is false because bats are mammals."
+  },
+  {
+    "title": "Particular Affirmative",
+    "text": "Statements:\nSome fruits are sweet.\nAll sweet things are tasty.\n\nWhich conclusion follows?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Some fruits are tasty",
+        "is_correct": true
+      },
+      {
+        "text": "All fruits are tasty",
+        "is_correct": false
+      },
+      {
+        "text": "All tasty things are sweet",
+        "is_correct": false
+      },
+      {
+        "text": "No fruit is tasty",
+        "is_correct": false
+      }
+    ],
+    "explanation": "From 'some A are B' and 'all B are C', we can conclude 'some A are C'. Some fruits (which are sweet) must be tasty since all sweet things are tasty."
+  },
+  {
+    "title": "No Valid Conclusion",
+    "text": "Statements:\nSome students are athletes.\nSome athletes are musicians.\n\nWhich conclusion follows?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "No definite conclusion",
+        "is_correct": true
+      },
+      {
+        "text": "Some students are musicians",
+        "is_correct": false
+      },
+      {
+        "text": "All athletes are students",
+        "is_correct": false
+      },
+      {
+        "text": "Some musicians are not students",
+        "is_correct": false
+      }
+    ],
+    "explanation": "With two 'some' statements, no definite relationship can be established between students and musicians. The overlapping groups might or might not intersect."
+  },
+  {
+    "title": "Complementary Pair",
+    "text": "Statements:\nSome pens are pencils.\nSome pencils are erasers.\n\nWhich of the following is a complementary pair?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "Some pens are erasers AND No pen is an eraser",
+        "is_correct": true
+      },
+      {
+        "text": "All pens are erasers AND Some erasers are not pens",
+        "is_correct": false
+      },
+      {
+        "text": "Some pencils are pens AND No pencil is a pen",
+        "is_correct": false
+      },
+      {
+        "text": "All pencils are erasers AND Some erasers are pencils",
+        "is_correct": false
+      }
+    ],
+    "explanation": "With 'some A are B' and 'some B are C', the relationship between A and C is unknown. 'Some pens are erasers' and 'No pen is an eraser' form a complementary (either-or) pair where one must be true."
+  },
+  {
+    "title": "All and Some Negation",
+    "text": "Statements:\nAll birds have feathers.\nSome animals with feathers cannot fly.\n\nWhich conclusion follows?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Some birds cannot fly",
+        "is_correct": false
+      },
+      {
+        "text": "Some animals with feathers are birds",
+        "is_correct": true
+      },
+      {
+        "text": "No bird can fly",
+        "is_correct": false
+      },
+      {
+        "text": "All flying animals have feathers",
+        "is_correct": false
+      }
+    ],
+    "explanation": "All birds have feathers, so birds are a subset of 'animals with feathers'. Therefore, some animals with feathers are definitely birds. We cannot conclude anything about birds' ability to fly."
+  },
+  {
+    "title": "Only Statement",
+    "text": "Statement:\nOnly intelligent students can solve this puzzle.\nRam solved the puzzle.\n\nWhich conclusion follows?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Ram is intelligent",
+        "is_correct": true
+      },
+      {
+        "text": "Only Ram is intelligent",
+        "is_correct": false
+      },
+      {
+        "text": "No one else can solve the puzzle",
+        "is_correct": false
+      },
+      {
+        "text": "Ram is not intelligent",
+        "is_correct": false
+      }
+    ],
+    "explanation": "'Only X can do Y' means Y implies X (if Y then X). Since Ram solved the puzzle (Y is true), Ram must be intelligent (X is true)."
+  },
+  {
+    "title": "Except Statement",
+    "text": "Statement:\nAll students except those with backlogs can sit for placements.\nRavi has no backlogs.\n\nWhich conclusion follows?",
+    "difficulty": "medium",
+    "options": [
+      {
+        "text": "Ravi can sit for placements",
+        "is_correct": true
+      },
+      {
+        "text": "Ravi cannot sit for placements",
+        "is_correct": false
+      },
+      {
+        "text": "Only Ravi can sit for placements",
+        "is_correct": false
+      },
+      {
+        "text": "No one with backlogs can sit",
+        "is_correct": false
+      }
+    ],
+    "explanation": "'All except A are B' means if not A then B. Since Ravi has no backlogs (not A), he can sit for placements (B)."
+  },
+  {
+    "title": "Venn Diagram Analysis",
+    "text": "Statements:\nSome doctors are teachers.\nAll teachers are educated.\n\nWhich Venn diagram correctly represents the relationship?",
+    "difficulty": "easy",
+    "options": [
+      {
+        "text": "Doctors overlap with teachers, teachers inside educated",
+        "is_correct": true
+      },
+      {
+        "text": "Doctors and teachers are separate, both inside educated",
+        "is_correct": false
+      },
+      {
+        "text": "Teachers overlap with educated, doctors outside educated",
+        "is_correct": false
+      },
+      {
+        "text": "All three are completely separate",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Some doctors are teachers (overlapping circles). All teachers are educated (teachers circle inside educated circle). Doctors may be partially or wholly inside educated."
+  },
+  {
+    "title": "Three Statements",
+    "text": "Statements:\nAll A are B.\nNo B is C.\nSome C are D.\n\nWhich conclusion follows?",
+    "difficulty": "hard",
+    "options": [
+      {
+        "text": "No A is C",
+        "is_correct": true
+      },
+      {
+        "text": "Some A are D",
+        "is_correct": false
+      },
+      {
+        "text": "All A are D",
+        "is_correct": false
+      },
+      {
+        "text": "No B is D",
+        "is_correct": false
+      }
+    ],
+    "explanation": "All A are B, and no B is C. Therefore, no A is C (this is a valid syllogism: A⊆B, B∩C=∅ ∴ A∩C=∅). The relationship between A/C and D cannot be determined from the given statements."
+  }
+]
